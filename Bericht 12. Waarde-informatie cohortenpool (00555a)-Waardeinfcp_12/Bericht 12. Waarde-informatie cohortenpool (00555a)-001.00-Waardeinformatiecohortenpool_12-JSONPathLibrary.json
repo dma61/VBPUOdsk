@@ -1,0 +1,11 @@
+{
+  "commonFunctional": {
+    "productName": "Bericht 12. Waarde-informatie cohortenpool (00555a)",
+    "definitionVersion": "001.00",
+    "startDate": "20240101",
+    "functionDescription": "Waardeinformatiecohortenpool_12",
+    "tag": "WAARDEINFCOHORTPOOL",
+    "afdDefinitionChangeLog": "Initieel"
+  },
+  "rule": []
+}

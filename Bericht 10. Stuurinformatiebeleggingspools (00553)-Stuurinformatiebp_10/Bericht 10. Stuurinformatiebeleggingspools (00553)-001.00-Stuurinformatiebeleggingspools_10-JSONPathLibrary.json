@@ -1,0 +1,11 @@
+{
+  "commonFunctional": {
+    "productName": "Bericht 10. Stuurinformatiebeleggingspools (00553)",
+    "definitionVersion": "001.00",
+    "startDate": "20240101",
+    "functionDescription": "Stuurinformatiebeleggingspools_10",
+    "tag": "STUURINFOBELEGGINGSPOOLS",
+    "afdDefinitionChangeLog": "Initieel"
+  },
+  "rule": []
+}

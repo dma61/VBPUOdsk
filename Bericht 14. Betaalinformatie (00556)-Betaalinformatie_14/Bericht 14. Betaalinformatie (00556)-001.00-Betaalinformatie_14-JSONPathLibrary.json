@@ -1,0 +1,18 @@
+{
+  "commonFunctional": {
+    "productName": "Bericht 14. Betaalinformatie (00556)",
+    "definitionVersion": "001.00",
+    "startDate": "20240101",
+    "functionDescription": "Betaalinformatie_14",
+    "tag": "BETAALINFORMATIE",
+    "afdDefinitionChangeLog": "Initieel"
+  },
+  "rule": [
+    {
+      "id": "BRA1000",
+      "test": "start\n    for each party in commonTechnical.party:\n        begin\n            if party.entityType is 'sender' OR 'receiver':\n                if (party.rsinNumber is empty AND party.refKey is empty):\n                    give error message 'FT1000'\n        end\nend\n",
+      "message": "FT1000: Een 'party' moet of een rsinNumber of refKey hebben. De sender en/of receiver entitytypes binnen commonTechnical voldoen niet aan deze voorwaarde.",
+      "source": "Pseudocode"
+    }
+  ]
+}
