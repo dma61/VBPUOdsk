@@ -1,0 +1,84 @@
+{
+  "commonFunctional": [
+    {
+      "entityType": "default",
+      "resending": false,
+      "originalMessageId": "msg12345",
+      "afdDefinitionName": "Rebalancinginformatie_11",
+      "function": "54"
+    }
+  ],
+  "commonTechnical": [
+    {
+      "entityType": "default",
+      "messageId": "msg12345",
+      "creationDateTime": "2023-12-18T10:00:00",
+      "messageVersion": "114", 
+      "testMessage": false,
+      "party": [
+        {
+          "entityType": "sender",
+          "rsinNumber": "123456789",
+          "refKey": "abc123",
+          "organizationName": "PensionFundXYZ",
+          "applicationSenderName": "PensionApp",
+          "party": [
+            {
+              "entityType": "contact"
+            }
+          ]
+        },
+        {
+          "entityType": "receiver",
+          "refKey": "def456",
+          "rsinNumber": "987654321",
+          "organizationName": "InvestmentCompanyABC"
+        }
+      ]
+    }
+  ],
+  "party": [
+    {
+      "entityType": "pensionProvider",
+      "refKey": "ghi789",
+      "organizationName": "PensionProviderXYZ",
+      "rsinNumber": "12398745",
+      "pension": [
+        {
+          "entityType": "scheme",
+          "refKey": "scheme001",
+          "pensionSchemeName": "BalancedGrowthScheme",
+          "financialInformation": [
+            {
+              "entityType": "reportingPeriod",
+              "tradeDate": "2023-01-01",
+              "investmentOrderSettlementDate": "2023-01-02"
+            }
+          ],
+          "pension": [
+            {
+              "entityType": "cohortPool",
+              "refKey": "cohort2023",
+              "currencyType": "EUR",
+              "investment": [
+                {
+                  "entityType": "pool",
+                  "refKey": "invest001",
+                  "dummyCashId": "DUMMY123",
+                  "buySellId": "BUY",
+                  "tradeQuantity": 1000,
+                  "unitPrice": 10.00,
+                  "currencyExchangeRate": 1.00,
+                  "tradeValueAmount": 10000.00,
+                  "currencyType": "EUR"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "error": [],
+  "document": []
+}
