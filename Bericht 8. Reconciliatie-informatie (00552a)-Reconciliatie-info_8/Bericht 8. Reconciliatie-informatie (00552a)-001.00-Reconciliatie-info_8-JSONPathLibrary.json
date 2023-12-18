@@ -1,0 +1,11 @@
+{
+  "commonFunctional": {
+    "productName": "Bericht 8. Reconciliatie-informatie (00552a)",
+    "definitionVersion": "001.00",
+    "startDate": "20240101",
+    "functionDescription": "Reconciliatie-info_8",
+    "tag": "ORDEROPDRACHT00541",
+    "afdDefinitionChangeLog": "Initieel"
+  },
+  "rule": []
+}

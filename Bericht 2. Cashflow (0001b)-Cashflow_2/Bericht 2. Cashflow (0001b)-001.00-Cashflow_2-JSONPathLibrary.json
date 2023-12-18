@@ -1,0 +1,11 @@
+{
+  "commonFunctional": {
+    "productName": "Bericht 2. Cashflow (0001b)",
+    "definitionVersion": "001.00",
+    "startDate": "20240101",
+    "functionDescription": "Cashflow_2",
+    "tag": "CASHFLOW0001B",
+    "afdDefinitionChangeLog": "Initieel"
+  },
+  "rule": []
+}

@@ -1,0 +1,11 @@
+{
+  "commonFunctional": {
+    "productName": "Bericht 3. Pensioenprojectie (0001c)",
+    "definitionVersion": "001.00",
+    "startDate": "20240101",
+    "functionDescription": "Pensioen_projectie_3",
+    "tag": "PROJECTIE0001C",
+    "afdDefinitionChangeLog": "Initieel"
+  },
+  "rule": []
+}

@@ -1,0 +1,11 @@
+{
+  "commonFunctional": {
+    "productName": "Bericht 5. Orderopdracht (00541)",
+    "definitionVersion": "001.00",
+    "startDate": "20240101",
+    "functionDescription": "OrderOpdrachtSettlement_5-6",
+    "tag": "ORDEROPDRACHT00541",
+    "afdDefinitionChangeLog": "Initieel"
+  },
+  "rule": []
+}

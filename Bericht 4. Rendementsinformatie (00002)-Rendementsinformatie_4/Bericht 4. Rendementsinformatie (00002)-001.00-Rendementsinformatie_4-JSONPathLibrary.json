@@ -1,0 +1,18 @@
+{
+  "commonFunctional": {
+    "productName": "Bericht 4. Rendementsinformatie (00002)",
+    "definitionVersion": "001.00",
+    "startDate": "20240101",
+    "functionDescription": "Rendementsinformatie_4",
+    "tag": "RENDEMENTSINFORMATIE0002",
+    "afdDefinitionChangeLog": "Initieel"
+  },
+  "rule": [
+    {
+      "id": "BR1",
+      "test": "BEGIN\n\tFOR EACH pensionScheme IN bericht4.party.pension\n\t\tFOR EACH investmentPortfolio IN pensionScheme.investment\n\t\t\tcalculatedEndAmount = investmentPortfolio.startAmount + investmentPortfolio.returnAmount + investmentPortfolio.netAmount\n\t\t\tIF calculatedEndAmount != investmentPortfolio.endAmount THEN\n\t\t\t\tPRINT 'FT4001'\n\t\t\tEND IF\n\t\tEND FOR\n\tEND FOR\nEND",
+      "message": "'FT4001: In investment portfolio '' + investmentPortfolio.refKey + '', de som van 'startAmount', 'returnAmount' en 'netAmount' (Netto som van inleg en onttrekkingen) moet gelijk zijn aan 'endAmount''.",
+      "source": "PseudoCode_GeenJsonPath"
+    }
+  ]
+}

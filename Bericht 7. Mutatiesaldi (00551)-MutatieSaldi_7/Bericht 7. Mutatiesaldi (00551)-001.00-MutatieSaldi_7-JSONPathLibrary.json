@@ -1,0 +1,11 @@
+{
+  "commonFunctional": {
+    "productName": "Bericht 7. Mutatiesaldi (00551)",
+    "definitionVersion": "001.00",
+    "startDate": "20240101",
+    "functionDescription": "MutatieSaldi_7",
+    "tag": "ORDEROPDRACHT00541",
+    "afdDefinitionChangeLog": "Initieel"
+  },
+  "rule": []
+}
