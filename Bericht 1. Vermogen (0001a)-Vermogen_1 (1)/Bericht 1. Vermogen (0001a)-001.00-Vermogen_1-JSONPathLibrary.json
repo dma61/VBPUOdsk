@@ -1,0 +1,11 @@
+{
+  "commonFunctional": {
+    "productName": "Bericht 1. Vermogen (0001a)",
+    "definitionVersion": "001.00",
+    "startDate": "20240101",
+    "functionDescription": "Vermogen_1",
+    "tag": "VERMOGEN0001A",
+    "afdDefinitionChangeLog": "Initieel"
+  },
+  "rule": []
+}
