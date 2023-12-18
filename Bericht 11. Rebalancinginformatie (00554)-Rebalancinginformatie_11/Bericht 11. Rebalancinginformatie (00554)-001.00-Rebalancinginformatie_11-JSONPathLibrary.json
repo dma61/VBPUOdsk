@@ -1,0 +1,11 @@
+{
+  "commonFunctional": {
+    "productName": "Bericht 11. Rebalancinginformatie (00554)",
+    "definitionVersion": "001.00",
+    "startDate": "20240101",
+    "functionDescription": "Rebalancinginformatie_11",
+    "tag": "STUURINFOBELEGGINGSPOOLS",
+    "afdDefinitionChangeLog": "Initieel"
+  },
+  "rule": []
+}
