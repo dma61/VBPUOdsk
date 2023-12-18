@@ -216,7 +216,7 @@
         "gender": {
           "description": "Gender. (NL: Geslacht)",
           "codelistName": "ADNGES",
-          "$ref": "Bericht%204.%20Rendementsinformatie%20(00002)-001.00-Rendementsinformatie_4-afdCodelists.json#/definitions/ADNGES",
+          "$ref": "https://www.sivi.org/afd-online-tool/json/ADNGES.json#/definitions/ADNGES",
           "type": "string"
         },
         "fullName": {
