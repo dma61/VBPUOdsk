@@ -1,0 +1,11 @@
+{
+  "commonFunctional": {
+    "productName": "Bericht 9. PUO-reconciliatie-informatie (00552b)",
+    "definitionVersion": "001.00",
+    "startDate": "20240101",
+    "functionDescription": "PUO Reconciliatie-info_9",
+    "tag": "PUORECONCILIATIEINFORMATIE",
+    "afdDefinitionChangeLog": "Initieel"
+  },
+  "rule": []
+}
