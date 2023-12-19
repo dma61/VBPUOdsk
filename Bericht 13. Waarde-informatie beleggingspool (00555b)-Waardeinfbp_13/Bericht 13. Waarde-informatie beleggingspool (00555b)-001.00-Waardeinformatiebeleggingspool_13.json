@@ -437,10 +437,32 @@
           "description": "Unique identification of an entity. (NL: De unieke identificatie van een entiteit.)",
           "type": "string",
           "const": "pool"
+        },
+        "refKey": {
+          "description": "Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)",
+          "type": "string"
+        },
+        "description": {
+          "description": "Description. (NL: Omschrijving)",
+          "type": "string"
+        },
+        "unitsSummedValueAmount": {
+          "description": "Sum of unit values. (NL: Som van unitwaarden.)",
+          "type": "number",
+          "multipleOf": 0.01
+        },
+        "currencyType": {
+          "description": "Currency   (NL: ISO valutacodetabel (ISO 4217))",
+          "codelistName": "ISOVAL",
+          "$ref": "https://www.sivi.org/afd-online-tool/json/ISOVAL.json#/definitions/ISOVAL",
+          "type": "string"
         }
       },
       "required": [
-        "entityType"
+        "entityType",
+        "refKey",
+        "unitsSummedValueAmount",
+        "currencyType"
       ]
     }
   },

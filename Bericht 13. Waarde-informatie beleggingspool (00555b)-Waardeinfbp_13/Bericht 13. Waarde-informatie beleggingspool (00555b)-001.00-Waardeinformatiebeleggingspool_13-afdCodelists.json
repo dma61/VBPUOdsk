@@ -171,6 +171,629 @@
           "const": "V"
         }
       ]
+    },
+    "ISOVAL": {
+      "description": "Currency   (NL: ISO valutacodetabel (ISO 4217))",
+      "codelistName": "ISOVAL",
+      "type": "string",
+      "oneOf": [
+        {
+          "description": "VAE-dirham",
+          "const": "AED"
+        },
+        {
+          "description": "Afghani",
+          "const": "AFN"
+        },
+        {
+          "description": "Albanese lek",
+          "const": "ALL"
+        },
+        {
+          "description": "Armeense dram",
+          "const": "AMD"
+        },
+        {
+          "description": "Antilliaanse gulden",
+          "const": "ANG"
+        },
+        {
+          "description": "Angolese kwanza",
+          "const": "AOA"
+        },
+        {
+          "description": "Argentijnse peso",
+          "const": "ARS"
+        },
+        {
+          "description": "Australische dollar",
+          "const": "AUD"
+        },
+        {
+          "description": "Arubaanse florin",
+          "const": "AWG"
+        },
+        {
+          "description": "Azerbeidzjaanse manat",
+          "const": "AZN"
+        },
+        {
+          "description": "Bosnische inwisselbare mark",
+          "const": "BAM"
+        },
+        {
+          "description": "Barbadiaanse dollar",
+          "const": "BBD"
+        },
+        {
+          "description": "Bengalese taka",
+          "const": "BDT"
+        },
+        {
+          "description": "Bulgaarse lev",
+          "const": "BGN"
+        },
+        {
+          "description": "Bahreinse dinar",
+          "const": "BHD"
+        },
+        {
+          "description": "Burundese frank",
+          "const": "BIF"
+        },
+        {
+          "description": "Bermudaanse dollar",
+          "const": "BMD"
+        },
+        {
+          "description": "Bruneise dollar",
+          "const": "BND"
+        },
+        {
+          "description": "Boliviaanse boliviano",
+          "const": "BOB"
+        },
+        {
+          "description": "Braziliaanse real",
+          "const": "BRL"
+        },
+        {
+          "description": "Bahamaanse dollar",
+          "const": "BSD"
+        },
+        {
+          "description": "Bhutaanse ngultrum",
+          "const": "BTN"
+        },
+        {
+          "description": "Botswaanse pula",
+          "const": "BWP"
+        },
+        {
+          "description": "Wit-Russische roebel",
+          "const": "BYN"
+        },
+        {
+          "description": "Belizaanse dollar",
+          "const": "BZD"
+        },
+        {
+          "description": "Canadese dollar",
+          "const": "CAD"
+        },
+        {
+          "description": "Congolese frank",
+          "const": "CDF"
+        },
+        {
+          "description": "Zwitserse frank",
+          "const": "CHF"
+        },
+        {
+          "description": "Chileense peso",
+          "const": "CLP"
+        },
+        {
+          "description": "Chinese renminbi",
+          "const": "CNY"
+        },
+        {
+          "description": "Colombiaanse peso",
+          "const": "COP"
+        },
+        {
+          "description": "Costa Ricaanse colon",
+          "const": "CRC"
+        },
+        {
+          "description": "Convertibele peso (munteenheid toeristen Cuba)",
+          "const": "CUC"
+        },
+        {
+          "description": "Cubaanse peso",
+          "const": "CUP"
+        },
+        {
+          "description": "Kaapverdische escudo",
+          "const": "CVE"
+        },
+        {
+          "description": "Tsjechische kroon",
+          "const": "CZK"
+        },
+        {
+          "description": "Djiboutiaanse frank",
+          "const": "DJF"
+        },
+        {
+          "description": "Deense kroon",
+          "const": "DKK"
+        },
+        {
+          "description": "Dominicaanse peso",
+          "const": "DOP"
+        },
+        {
+          "description": "Algerijnse dinar",
+          "const": "DZD"
+        },
+        {
+          "description": "Estische kroon",
+          "const": "EEK"
+        },
+        {
+          "description": "Egyptisch pond",
+          "const": "EGP"
+        },
+        {
+          "description": "Eritrese nakfa",
+          "const": "ERN"
+        },
+        {
+          "description": "Ethiopische birr",
+          "const": "ETB"
+        },
+        {
+          "description": "Euro",
+          "const": "EUR"
+        },
+        {
+          "description": "Fiji-dollar",
+          "const": "FJD"
+        },
+        {
+          "description": "Falklandeilands pond",
+          "const": "FKP"
+        },
+        {
+          "description": "Engelse pond sterling",
+          "const": "GBP"
+        },
+        {
+          "description": "Georgische lari",
+          "const": "GEL"
+        },
+        {
+          "description": "Ghanese cedi",
+          "const": "GHS"
+        },
+        {
+          "description": "Gibraltarees pond",
+          "const": "GIP"
+        },
+        {
+          "description": "Gambiaanse dalasi",
+          "const": "GMD"
+        },
+        {
+          "description": "Guineese frank",
+          "const": "GNF"
+        },
+        {
+          "description": "Guatemalaanse quetzal",
+          "const": "GTQ"
+        },
+        {
+          "description": "Guyaanse dollar",
+          "const": "GYD"
+        },
+        {
+          "description": "Hongkongse dollar",
+          "const": "HKD"
+        },
+        {
+          "description": "Hondurese lempira",
+          "const": "HNL"
+        },
+        {
+          "description": "Kroatische kuna",
+          "const": "HRK"
+        },
+        {
+          "description": "Haïtiaanse gourde",
+          "const": "HTG"
+        },
+        {
+          "description": "Hongaarse forint",
+          "const": "HUF"
+        },
+        {
+          "description": "Indonesische roepia",
+          "const": "IDR"
+        },
+        {
+          "description": "Israëlische sjekel",
+          "const": "ILS"
+        },
+        {
+          "description": "Indiase roepie",
+          "const": "INR"
+        },
+        {
+          "description": "Iraakse dinar",
+          "const": "IQD"
+        },
+        {
+          "description": "Iraanse rial",
+          "const": "IRR"
+        },
+        {
+          "description": "IJslandse kroon",
+          "const": "ISK"
+        },
+        {
+          "description": "Jamaicaanse dollar",
+          "const": "JMD"
+        },
+        {
+          "description": "Jordaanse dinar",
+          "const": "JOD"
+        },
+        {
+          "description": "Japanse yen",
+          "const": "JPY"
+        },
+        {
+          "description": "Keniaanse shilling",
+          "const": "KES"
+        },
+        {
+          "description": "Kirgizische som",
+          "const": "KGS"
+        },
+        {
+          "description": "Cambodjaanse riel",
+          "const": "KHR"
+        },
+        {
+          "description": "Comorese frank",
+          "const": "KMF"
+        },
+        {
+          "description": "Noord-Koreaanse won",
+          "const": "KPW"
+        },
+        {
+          "description": "Zuid-Koreaanse won",
+          "const": "KRW"
+        },
+        {
+          "description": "Koeweitse dinar",
+          "const": "KWD"
+        },
+        {
+          "description": "Kaaimaneilandse dollar",
+          "const": "KYD"
+        },
+        {
+          "description": "Kazachse tenge",
+          "const": "KZT"
+        },
+        {
+          "description": "Laotiaanse kip",
+          "const": "LAK"
+        },
+        {
+          "description": "Libanees pond",
+          "const": "LBP"
+        },
+        {
+          "description": "Sri Lankaanse roepie",
+          "const": "LKR"
+        },
+        {
+          "description": "Liberiaanse dollar",
+          "const": "LRD"
+        },
+        {
+          "description": "Lesothaanse loti",
+          "const": "LSL"
+        },
+        {
+          "description": "Libische dinar",
+          "const": "LYD"
+        },
+        {
+          "description": "Marokkaanse dirham",
+          "const": "MAD"
+        },
+        {
+          "description": "Moldavische leu",
+          "const": "MDL"
+        },
+        {
+          "description": "Malagassische ariary",
+          "const": "MGA"
+        },
+        {
+          "description": "Macedonische denar",
+          "const": "MKD"
+        },
+        {
+          "description": "Myanmarese kyat",
+          "const": "MMK"
+        },
+        {
+          "description": "Mongolische tugrik",
+          "const": "MNT"
+        },
+        {
+          "description": "Macause pataca",
+          "const": "MOP"
+        },
+        {
+          "description": "Mauritaanse ouguiya",
+          "const": "MRU"
+        },
+        {
+          "description": "Mauritiaanse roepie",
+          "const": "MUR"
+        },
+        {
+          "description": "Maldivische rufiyaa",
+          "const": "MVR"
+        },
+        {
+          "description": "Malawische kwacha",
+          "const": "MWK"
+        },
+        {
+          "description": "Mexicaanse peso",
+          "const": "MXN"
+        },
+        {
+          "description": "Maleisische ringgit",
+          "const": "MYR"
+        },
+        {
+          "description": "Mozambikaanse metical",
+          "const": "MZN"
+        },
+        {
+          "description": "Namibische dollar",
+          "const": "NAD"
+        },
+        {
+          "description": "Nigeriaanse naira",
+          "const": "NGN"
+        },
+        {
+          "description": "Nicaraguaanse córdoba Oro",
+          "const": "NIO"
+        },
+        {
+          "description": "Noorse kroon",
+          "const": "NOK"
+        },
+        {
+          "description": "Nepalese roepie",
+          "const": "NPR"
+        },
+        {
+          "description": "Nieuw-Zeelandse dollar",
+          "const": "NZD"
+        },
+        {
+          "description": "Omaanse rial",
+          "const": "OMR"
+        },
+        {
+          "description": "Panamese balboa",
+          "const": "PAB"
+        },
+        {
+          "description": "Peruviaanse sol",
+          "const": "PEN"
+        },
+        {
+          "description": "Papoease kina",
+          "const": "PGK"
+        },
+        {
+          "description": "Filipijnse peso",
+          "const": "PHP"
+        },
+        {
+          "description": "Pakistaanse roepie",
+          "const": "PKR"
+        },
+        {
+          "description": "Poolse zloty",
+          "const": "PLN"
+        },
+        {
+          "description": "Paraguayaanse guaraní",
+          "const": "PYG"
+        },
+        {
+          "description": "Qatarese rial",
+          "const": "QAR"
+        },
+        {
+          "description": "Roemeense leu",
+          "const": "RON"
+        },
+        {
+          "description": "Servische dinar",
+          "const": "RSD"
+        },
+        {
+          "description": "Russische roebel",
+          "const": "RUB"
+        },
+        {
+          "description": "Rwandese frank",
+          "const": "RWF"
+        },
+        {
+          "description": "Saoedi-Arabische riyal",
+          "const": "SAR"
+        },
+        {
+          "description": "Salomon-dollar",
+          "const": "SBD"
+        },
+        {
+          "description": "Seychelse roepie",
+          "const": "SCR"
+        },
+        {
+          "description": "Soedanees pond",
+          "const": "SDG"
+        },
+        {
+          "description": "Zweedse kroon",
+          "const": "SEK"
+        },
+        {
+          "description": "Singaporese dollar",
+          "const": "SGD"
+        },
+        {
+          "description": "Sint-Heleens pond",
+          "const": "SHP"
+        },
+        {
+          "description": "Sierra Leoonse leone",
+          "const": "SLL"
+        },
+        {
+          "description": "Somalische shilling",
+          "const": "SOS"
+        },
+        {
+          "description": "Surinaamse dollar",
+          "const": "SRD"
+        },
+        {
+          "description": "Zuid-Soedanees pond",
+          "const": "SSP"
+        },
+        {
+          "description": "Santomese dobra",
+          "const": "STN"
+        },
+        {
+          "description": "Syrisch pond",
+          "const": "SYP"
+        },
+        {
+          "description": "Swazische lilangeni",
+          "const": "SZL"
+        },
+        {
+          "description": "Thaise baht",
+          "const": "THB"
+        },
+        {
+          "description": "Tadzjiekse somoni",
+          "const": "TJS"
+        },
+        {
+          "description": "Turkmeense manat",
+          "const": "TMT"
+        },
+        {
+          "description": "Tunesische dinar",
+          "const": "TND"
+        },
+        {
+          "description": "Tongaanse pa'anga",
+          "const": "TOP"
+        },
+        {
+          "description": "Turkse lira",
+          "const": "TRY"
+        },
+        {
+          "description": "Trinidad en Tobagodollar",
+          "const": "TTD"
+        },
+        {
+          "description": "Taiwanese dollar",
+          "const": "TWD"
+        },
+        {
+          "description": "Tanzaniaanse shilling",
+          "const": "TZS"
+        },
+        {
+          "description": "Oekraïnse grivna",
+          "const": "UAH"
+        },
+        {
+          "description": "Oegandese shilling",
+          "const": "UGX"
+        },
+        {
+          "description": "Amerikaanse dollar",
+          "const": "USD"
+        },
+        {
+          "description": "Uruguayaanse peso",
+          "const": "UYU"
+        },
+        {
+          "description": "Oezbeekse sum",
+          "const": "UZS"
+        },
+        {
+          "description": "Venezolaanse bolivar",
+          "const": "VEF"
+        },
+        {
+          "description": "Vietnamese dong",
+          "const": "VND"
+        },
+        {
+          "description": "Vanuatuaanse vatu",
+          "const": "VUV"
+        },
+        {
+          "description": "Samoaanse tala",
+          "const": "WST"
+        },
+        {
+          "description": "Oost-Caribische dollar",
+          "const": "XCD"
+        },
+        {
+          "description": "Jemenitische rial",
+          "const": "YER"
+        },
+        {
+          "description": "Zuid-Afrikaanse rand",
+          "const": "ZAR"
+        },
+        {
+          "description": "Zambiaanse kwacha",
+          "const": "ZMW"
+        },
+        {
+          "description": "Anders",
+          "const": "ZZZ"
+        }
+      ]
     }
   }
 }
