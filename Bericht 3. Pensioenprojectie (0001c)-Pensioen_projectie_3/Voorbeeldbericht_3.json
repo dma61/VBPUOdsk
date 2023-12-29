@@ -1,0 +1,81 @@
+{
+  "commonFunctional": [
+    {
+      "entityType": "default",
+      "function": "01",
+      "resending": false,
+      "afdDefinitionName": "Pensioen_projectie_3",
+      "originalMessageId": "orig123456"
+    }
+  ],
+  "commonTechnical": [
+    {
+      "entityType": "default",
+      "messageId": "msg987654",
+      "creationDateTime": "20231229T123000",
+      "messageVersion": "5", 
+      "testMessage": true,
+      "party": [
+        {
+          "entityType": "receiver",
+          "refKey": "recv001",
+          "rsinNumber": "123456789",
+          "organizationName": "Pension Fund A"
+        },
+        {
+          "entityType": "sender",
+          "rsinNumber": "987654321",
+          "organizationName": "Insurance Company B",
+          "refKey": "send001",
+          "applicationSenderName": "InsurAppV3",
+          "party": [
+            {
+              "entityType": "contact",
+              "surname": "Doe",
+              "firstName": "John",
+              "prefixes": "van",
+              "initials": "J.D.",
+              "titlesPrefix": "Mr.",
+              "gender": "M", 
+              "fullName": "John van Doe"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "party": [
+    {
+      "entityType": "pensionProvider",
+      "refKey": "pensProv001",
+      "rsinNumber": "55566677",
+      "organizationName": "Pension Provider XYZ",
+      "pension": [
+        {
+          "entityType": "scheme",
+          "refKey": "scheme01",
+          "pensionSchemeName": "Standard Retirement Plan",
+          "expectedPensionPaymentDate": "20450101",
+          "totalExpectedPensionPaymentAmount": 300000.00,
+          "hedgedExpectedPensionPaymentAmount": 150000.00,
+          "financialInformation": [
+            {
+              "entityType": "reportingPeriod",
+              "projectionDate": "20240101"
+            }
+          ],
+          "pension": [
+            {
+              "entityType": "cohort",
+              "refKey": "cohort2024",
+              "description": "2024 Retirement Group",
+              "expectedPensionPaymentAmount": 20000.00
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "document": [],
+  "error": []
+}

@@ -1,0 +1,127 @@
+{
+  "commonFunctional": [
+    {
+      "entityType": "default",
+      "function": "01",
+      "resending": false,
+      "afdDefinitionName": "Pensioen_projectie_3",
+      "originalMessageId": "orig123456"
+    }
+  ],
+  "commonTechnical": [
+    {
+      "entityType": "default",
+      "messageId": "msg987654",
+      "creationDateTime": "20231229T123000",
+      "messageVersion": "5",
+      "testMessage": true,
+      "party": [
+        {
+          "entityType": "receiver",
+          "refKey": "recv001",
+          "rsinNumber": "12345678",
+          "organizationName": "Pension Fund A"
+        },
+        {
+          "entityType": "sender",
+          "rsinNumber": "98765432",
+          "organizationName": "Insurance Company B",
+          "refKey": "send001",
+          "applicationSenderName": "InsurAppV3"
+        }
+      ]
+    }
+  ],
+  "party": [
+    {
+      "entityType": "pensionProvider",
+      "refKey": "pensProv001",
+      "rsinNumber": "55566677",
+      "organizationName": "Pension Provider XYZ",
+      "pension": [
+        {
+          "entityType": "scheme",
+          "refKey": "scheme01",
+          "pensionSchemeName": "Standard Retirement Plan",
+          "expectedPensionPaymentDate": "20450101",
+          "totalExpectedPensionPaymentAmount": 300000.00,
+          "hedgedExpectedPensionPaymentAmount": 150000.00,
+          "financialInformation": [
+            {
+              "entityType": "reportingPeriod",
+              "projectionDate": "20240101"
+            }
+          ],
+          "pension": [
+            {
+              "entityType": "cohort",
+              "refKey": "cohort2024",
+              "description": "2024 Retirement Group",
+              "expectedPensionPaymentAmount": 20000.00
+            },
+            {
+              "entityType": "cohort",
+              "refKey": "cohort2025",
+              "description": "2025 Retirement Group",
+              "expectedPensionPaymentAmount": 21000.00
+            },
+            {
+              "entityType": "cohort",
+              "refKey": "cohort2026",
+              "description": "2026 Retirement Group",
+              "expectedPensionPaymentAmount": 22000.00
+            }
+          ]
+        },
+        {
+          "entityType": "scheme",
+          "refKey": "scheme02",
+          "pensionSchemeName": "Advanced Retirement Plan",
+          "expectedPensionPaymentDate": "20500101",
+          "totalExpectedPensionPaymentAmount": 400000.00,
+          "hedgedExpectedPensionPaymentAmount": 200000.00,
+          "financialInformation": [
+            {
+              "entityType": "reportingPeriod",
+              "projectionDate": "20250101"
+            }
+          ],
+          "pension": [
+            {
+              "entityType": "cohort",
+              "refKey": "cohort2030",
+              "description": "2030 Retirement Group",
+              "expectedPensionPaymentAmount": 23000.00
+            },
+            {
+              "entityType": "cohort",
+              "refKey": "cohort2035",
+              "description": "2035 Retirement Group",
+              "expectedPensionPaymentAmount": 24000.00
+            },
+            {
+              "entityType": "cohort",
+              "refKey": "cohort2040",
+              "description": "2040 Retirement Group",
+              "expectedPensionPaymentAmount": 25000.00
+            },
+            {
+              "entityType": "cohort",
+              "refKey": "cohort2045",
+              "description": "2045 Retirement Group",
+              "expectedPensionPaymentAmount": 26000.00
+            },
+            {
+              "entityType": "cohort",
+              "refKey": "cohort2050",
+              "description": "2050 Retirement Group",
+              "expectedPensionPaymentAmount": 27000.00
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "document": [],
+  "error": []
+}
