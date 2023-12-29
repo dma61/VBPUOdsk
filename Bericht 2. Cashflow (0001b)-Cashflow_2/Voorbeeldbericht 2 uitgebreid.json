@@ -1,0 +1,139 @@
+{
+    "commonFunctional": [
+        {
+            "entityType": "default",
+            "function": "01",
+            "afdDefinitionName": "Cashflow_2"
+        }
+    ],
+    "commonTechnical": [
+        {
+            "entityType": "default",
+            "messageId": "msg123456",
+            "creationDateTime": "2023-12-28T12:00:00Z",
+            "messageVersion": "1",
+            "testMessage": false,
+            "party": [
+                {
+                    "entityType": "receiver",
+                    "refKey": "REC123",
+                    "rsinNumber": "87654321",
+                    "organizationName": "Ontvanger Organisatie"
+                },
+                {
+                    "entityType": "sender",
+                    "rsinNumber": "12345678",
+                    "organizationName": "Zender Organisatie",
+                    "refKey": "SEND123",
+                    "applicationSenderName": "ApplicatieNaam",
+                    "party": [
+                        {
+                            "entityType": "contact",
+                            "surname": "Jansen",
+                            "firstName": "Jan",
+                            "prefixes": "van",
+                            "initials": "J.V.",
+                            "titlesPrefix": "Dr.",
+                            "gender": "M",
+                            "fullName": "Dr. Jan van Jansen"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "party": [
+        {
+            "entityType": "pensionProvider",
+            "refKey": "PENPROV123",
+            "rsinNumber": "12345678",
+            "organizationName": "Pensioenverstrekker",
+            "pension": [
+                {
+                    "entityType": "scheme",
+                    "refKey": "SCH456",
+                    "pensionSchemeName": "Standaard Pensioen",
+                    "financialInformation": [
+                        {
+                            "entityType": "reportingPeriod",
+                            "startDate": "2023-01-01",
+                            "endDate": "2023-12-31"
+                        }
+                    ],
+                    "financialTransaction": [
+                        {
+                            "entityType": "cashflow",
+                            "contributionAmount": 15000.00,
+                            "contributionDate": "2023-01-01",
+                            "withdrawalAmount": 4000.00,
+                            "withdrawalDate": "2023-01-15",
+                            "netAmount": 11000.00,
+                            "netDate": "2023-01-31"
+                        }
+                    ],
+                    "pension": [
+                        {
+                            "entityType": "cohort",
+                            "refKey": "COH789",
+                            "description": "Cohort 2023",
+                            "netAmount": 5000.00,
+                            "contributionAmount": 7000.00,
+                            "withdrawalAmount": 2000.00
+                        },
+                        {
+                            "entityType": "cohort",
+                            "refKey": "COH790",
+                            "description": "Cohort 2024",
+                            "netAmount": 6000.00,
+                            "contributionAmount": 8000.00,
+                            "withdrawalAmount": 2000.00
+                        }
+                    ]
+                },
+                {
+                    "entityType": "scheme",
+                    "refKey": "SCH457",
+                    "pensionSchemeName": "Geavanceerd Pensioen",
+                    "financialInformation": [
+                        {
+                            "entityType": "reportingPeriod",
+                            "startDate": "2023-03-01",
+                            "endDate": "2023-12-31"
+                        }
+                    ],
+                    "financialTransaction": [
+                        {
+                            "entityType": "cashflow",
+                            "contributionAmount": 16000.00,
+                            "contributionDate": "2023-03-01",
+                            "withdrawalAmount": 4000.00,
+                            "withdrawalDate": "2023-03-15",
+                            "netAmount": 12000.00,
+                            "netDate": "2023-03-31"
+                        }
+                    ],
+                    "pension": [
+                        {
+                            "entityType": "cohort",
+                            "refKey": "COH791",
+                            "description": "Cohort 2025",
+                            "netAmount": 5500.00,
+                            "contributionAmount": 7500.00,
+                            "withdrawalAmount": 2000.00
+                        },
+                        {
+                            "entityType": "cohort",
+                            "refKey": "COH792",
+                            "description": "Cohort 2026",
+                            "netAmount": 6500.00,
+                            "contributionAmount": 8500.00,
+                            "withdrawalAmount": 2000.00
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "error": [],
+    "document": []
+}
