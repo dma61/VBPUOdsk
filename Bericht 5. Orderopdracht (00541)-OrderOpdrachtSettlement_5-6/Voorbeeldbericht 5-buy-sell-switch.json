@@ -101,7 +101,7 @@
                   "buySellId": "switch",
                   "tradeDate": "20240106",
                   "tradeAmount": -2000.00,
-                  "tradeQuantity": -20,
+                  
                   "switchType": "1", 
                   "financialInformationRef": ["trade126", "inv003"]
                 }
