@@ -1,0 +1,85 @@
+{
+  "commonFunctional": [
+    {
+      "entityType": "default",
+      "function": "01",
+      "resending": false,
+      "afdDefinitionName": "OrderOpdrachtSettlement_5-6",
+      "originalMessageId": "12345"
+    }
+  ],
+  "commonTechnical": [
+    {
+      "entityType": "default",
+      "messageId": "67890",
+      "creationDateTime": "20231230T120000",
+      "messageVersion": "1",
+      "testMessage": false,
+      "party": [
+        {
+          "entityType": "receiver",
+          "refKey": "recv001",
+          "rsinNumber": "12345678",
+          "organizationName": "Pension Fund A"
+        },
+        {
+          "entityType": "sender",
+          "rsinNumber": "87654321",
+          "organizationName": "Investment Firm B",
+          "refKey": "send001",
+          "applicationSenderName": "InvestAppV1"
+        }
+      ]
+    }
+  ],
+  "party": [
+    {
+      "entityType": "pensionProvider",
+      "refKey": "pensProv002",
+      "rsinNumber": "11223344",
+      "organizationName": "Pension Provider YZ",
+      "pension": [
+        {
+          "entityType": "scheme",
+          "refKey": "schemeXYZ",
+          "pensionSchemeName": "Investment Scheme A",
+          "tradingPortfolioId": "Trade123",
+          "financialInformation": [
+            {
+              "entityType": "reportingPeriod",
+              "instructionDate": "20240102"
+            }
+          ],
+          "investment": [
+            {
+              "entityType": "investmentDetails",
+              "refKey": "inv001",
+              "description": "Equity Fund",
+              "currencyType": "EUR",
+              "financialTransaction": [
+                {
+                  "entityType": "trade",
+                  "refKey": "trade123",
+                  "buySellId": "buy",
+                  "tradeDate": "20240103",
+                  "tradeAmount": 10000.00,
+                  "tradeQuantity": 100
+                },
+                {
+                  "entityType": "trade",
+                  "refKey": "trade124",
+                  "buySellId": "sell",
+                  "tradeDate": "20240104",
+                  "tradeAmount": 5000.00,
+                  "tradeQuantity": 50
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "document": [],
+  "error": []
+}
