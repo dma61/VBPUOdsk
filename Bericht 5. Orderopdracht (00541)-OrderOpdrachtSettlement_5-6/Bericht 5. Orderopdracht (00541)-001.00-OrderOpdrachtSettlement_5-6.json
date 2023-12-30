@@ -536,8 +536,15 @@
         "switchType": {
           "description": "Switch type (NL: Switchsoort)",
           "codelistName": "AFDSWI",
-          "$ref": "https://www.sivi.org/afd-online-tool/json/AFDSWI.json#/definitions/AFDSWI",
-          "type": "string"
+          "type": "string",
+          "oneOf": [
+            {
+              "const": "1"
+            },
+            {
+              "const": "2"
+            }
+          ]
         },
         "financialInformationRef": {
           "description": "Unique referral to the refKey of one or more financialInformation entities. (AFD 2.0 only)",
