@@ -7,5 +7,24 @@
     "tag": "ORDEROPDRACHT00541",
     "afdDefinitionChangeLog": "Initieel"
   },
-  "rule": []
+  "rule": [
+    {
+      "id": "BR6",
+      "test": "BEGIN\n    FOR EACH pensionScheme IN bericht5.party.pension\n        FOR EACH investment IN pensionScheme.investment\n            FOR EACH trade IN investment.financialTransaction\n                IF trade.buySellId == 'switch' \n                    gerelateerdeTradeRefKey = trade.financialInformationRef[0]\n                    gerelateerdeTrade = VindTradeMetRefKey(gerelateerdeTradeRefKey, investment.financialTransaction)\n                    IF gerelateerdeTrade IS NULL\n                        PRINT 'FT5006: Gerelateerde trade niet gevonden voor refKey ' + gerelateerdeTradeRefKey\n                    END IF\n                END IF\n            END FOR\n        END FOR\n    END FOR\nEND\n",
+      "message": "'FT5006: Gerelateerde trade niet gevonden voor refKey ' + gerelateerdeTradeRefKey",
+      "source": "Pseudocode 2: Controleer of de gerelateerde trade bestaat"
+    },
+    {
+      "id": "BR7",
+      "test": "BEGIN\n    FOR EACH pensionScheme IN bericht5.party.pension\n        FOR EACH investment IN pensionScheme.investment\n            FOR EACH trade IN investment.financialTransaction\n                IF trade.buySellId == 'switch' \n                    gerelateerdeTradeRefKey = trade.financialInformationRef[0]\n                    gerelateerdeTrade = VindTradeMetRefKey(gerelateerdeTradeRefKey, investment.financialTransaction)\n                    IF gerelateerdeTrade IS NOT NULL\n                        gerelateerdBedragGevuld = gerelateerdeTrade.tradeAmount IS NOT NULL\n                        gerelateerdAantalGevuld = gerelateerdeTrade.tradeQuantity IS NOT NULL\n                        IF NOT gerelateerdBedragGevuld AND NOT gerelateerdAantalGevuld\n                            PRINT FT5007\n                        END IF\n                    END IF\n                END IF\n            END FOR\n        END FOR\n    END FOR\nEND\n",
+      "message": "'FT5007: Gerelateerde trade heeft noch bedrag noch aantal voor refKey ' + gerelateerdeTradeRefKey",
+      "source": "Pseudocode 7: Controleer of zowel bedrag als aantal niet gevuld zijn in een gerelateerde trade"
+    },
+    {
+      "id": "BR9",
+      "test": "BEGIN\n    FOR EACH pensionScheme IN bericht5.party.pension\n        FOR EACH investment IN pensionScheme.investment\n            FOR EACH trade IN investment.financialTransaction\n                IF trade.buySellId == 'switch'\n                    bedragGevuld = trade.tradeAmount IS NOT NULL\n                    aantalGevuld = trade.tradeQuantity IS NOT NULL\n                    IF bedragGevuld AND aantalGevuld\n                        PRINT FT5009\n                    END IF\n                END IF\n            END FOR\n        END FOR\n    END FOR\nEND\n",
+      "message": " 'FT5009: Zowel bedrag als aantal zijn gevuld voor switch trade met refKey ' + trade.refKey",
+      "source": "Pseudocode 9: Controleer of zowel bedrag als aantal gevuld zijn in een switch trade"
+    }
+  ]
 }
