@@ -1,0 +1,169 @@
+{
+  "commonFunctional": [
+    {
+      "entityType": "default",
+      "function": "02",
+      "resending": false,
+      "afdDefinitionName": "OrderOpdrachtSettlement_6",
+      "originalMessageId": "12345"
+    }
+  ],
+  "commonTechnical": [
+    {
+      "entityType": "default",
+      "messageId": "77891",
+      "creationDateTime": "20240107T120000",
+      "messageVersion": "1",
+      "testMessage": false,
+      "party": [
+        {
+          "entityType": "sender",
+          "refKey": "recv001",
+          "rsinNumber": "12345678",
+          "organizationName": "Pension Fund A",
+          "applicationSenderName": "OurApp"
+        },
+        {
+          "entityType": "receiver",
+          "rsinNumber": "87654321",
+          "organizationName": "Investment Firm B",
+          "refKey": "send001"
+        }
+      ]
+    }
+  ],
+  "party": [
+    {
+      "entityType": "pensionProvider",
+      "refKey": "pensProv002",
+      "rsinNumber": "11223344",
+      "organizationName": "Pension Provider YZ",
+      "pension": [
+        {
+          "entityType": "scheme",
+          "refKey": "schemeXYZ",
+          "pensionSchemeName": "Investment Scheme A",
+          "tradingPortfolioId": "Trade123",
+          "financialInformation": [
+            {
+              "entityType": "reportingPeriod",
+              "investmentOrderSettlementDate": "20240107",
+              "instructionDate": "20240102"
+            }
+          ],
+          "investment": [
+            {
+              "entityType": "investmentDetails",
+              "refKey": "inv001",
+              "description": "Equity Fund",
+              "currencyType": "EUR",
+              "financialTransaction": [
+                {
+                  "entityType": "trade",
+                  "refKey": "trade123",
+                  "adjustmentIndicator": false,
+                  "buySellId": "buy",
+                  "tradeDate": "20240103",
+                  "tradeAmount": 10000.00,
+                  "tradeQuantity": 100,
+                  "tradePrice": 100.00,
+                  "commissionAmount": 50.00,
+                  "interestAmount": 0.5,
+                  "counterparty": "Counterparty XYZ",
+                  "broker": "Broker ABC",
+                  "clearingBroker": "Clearing Broker DEF",
+                  "clearingBrokerCashAccount": "CBA123456"
+                },
+                {
+                  "entityType": "trade",
+                  "refKey": "trade124",
+                  "adjustmentIndicator": false,
+                  "buySellId": "sell",
+                  "tradeDate": "20240104",
+                  "tradeAmount": 5000.00,
+                  "tradeQuantity": 50,
+                  "tradePrice": 100.00,
+                  "commissionAmount": 25.00,
+                  "interestAmount": 0.25,
+                  "counterparty": "Counterparty XYZ",
+                  "broker": "Broker ABC",
+                  "clearingBroker": "Clearing Broker DEF",
+                  "clearingBrokerCashAccount": "CBA123456"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "entityType": "scheme",
+          "refKey": "schemeABC",
+          "pensionSchemeName": "Retirement Plan B",
+          "tradingPortfolioId": "Trade456",
+          "financialInformation": [
+            {
+              "entityType": "reportingPeriod",
+              "investmentOrderSettlementDate": "20240107",
+              "instructionDate": "20240105"
+            }
+          ],
+          "investment": [
+            {
+              "entityType": "investmentDetails",
+              "refKey": "inv002",
+              "description": "Bond Fund",
+              "currencyType": "USD",
+              "financialTransaction": [
+                {
+                  "entityType": "trade",
+                  "refKey": "trade125",
+                  "adjustmentIndicator": false,
+                  "buySellId": "switch",
+                  "tradeDate": "20240106",
+                  "tradeAmount": -2000.00,
+                  "tradeQuantity": -20,
+                  "tradePrice": 100.00,
+                  "switchType": "1",
+                  "financialInformationRef": ["trade126", "inv003"],
+                  "commissionAmount": 20.00,
+                  "interestAmount": 0.20,
+                  "counterparty": "Counterparty XYZ",
+                  "broker": "Broker ABC",
+                  "clearingBroker": "Clearing Broker DEF",
+                  "clearingBrokerCashAccount": "CBA123456"
+                }
+              ]
+            },
+            {
+              "entityType": "investmentDetails",
+              "refKey": "inv003",
+              "description": "Global Equity",
+              "currencyType": "EUR",
+              "financialTransaction": [
+                {
+                  "entityType": "trade",
+                  "refKey": "trade126",
+                  "adjustmentIndicator": false,
+                  "buySellId": "switch",
+                  "tradeDate": "20240106",
+                  "tradeAmount": 2000.00,
+                  "tradeQuantity": 50,
+                  "tradePrice": 40.00,
+                  "switchType": "1",
+                  "financialInformationRef": ["trade125", "inv002"],
+                  "commissionAmount": 20.00,
+                  "interestAmount": 0.20,
+                  "counterparty": "Counterparty XYZ",
+                  "broker": "Broker ABC",
+                  "clearingBroker": "Clearing Broker DEF",
+                  "clearingBrokerCashAccount": "CBA123456"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "document": [],
+  "error": []
+}

@@ -124,11 +124,15 @@
         },
         "refKey": {
           "description": "Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)",
-          "type": "string"
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 70
         },
         "rsinNumber": {
           "description": "Governmental identification number for legal entities and associations. (AFD 2.0 only)",
-          "type": "string"
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 8
         },
         "organizationName": {
           "description": "Name of professional or branch organization. (NL: Naam beroeps of branche organisatie.)",
@@ -151,11 +155,19 @@
         },
         "rsinNumber": {
           "description": "Governmental identification number for legal entities and associations. (AFD 2.0 only)",
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 8
+        },
+        "organizationName": {
+          "description": "Name of professional or branch organization. (NL: Naam beroeps of branche organisatie.)",
           "type": "string"
         },
         "refKey": {
           "description": "Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)",
-          "type": "string"
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 70
         },
         "applicationSenderName": {
           "description": "Name of the application that sends the data. (NL: Naam van de applicatie die de gegevens verzendt.)",
@@ -177,6 +189,7 @@
       },
       "required": [
         "entityType",
+        "organizationName",
         "refKey"
       ]
     },
