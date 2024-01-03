@@ -193,6 +193,10 @@
           "type": "string",
           "const": "contact"
         },
+        "surname": {
+          "description": "Dual purpose use. For natural persons the last name without prefixes, with possible suffixes if these are not titles. For legal persons, the company name. (NL: Tweeledig gebruik: - Bij natuurlijke personen de achternaam zonder voorvoegsels, met eventueel achtervoegsels in zoverre dit geen titels zijn. - Bij rechtspersonen de bedrijfsnaam.)",
+          "type": "string"
+        },
         "firstName": {
           "description": "First name. Two elements connected by a hyphen (E.g. Peggy-Sue) are considered as one name (According to NEN 1888, General Personal Data). (NL: Eerste voornaam. Twee elementen  verbonden door een koppelteken (b.v. Jan-Pieter) wordt als &#233;&#233;n voornaam beschouwd (Uit: NEN 1888, Algemene Persoonsgegevens).)",
           "type": "string"
@@ -222,6 +226,7 @@
       },
       "required": [
         "entityType",
+        "surname",
         "initials",
         "titlesPrefix"
       ]
