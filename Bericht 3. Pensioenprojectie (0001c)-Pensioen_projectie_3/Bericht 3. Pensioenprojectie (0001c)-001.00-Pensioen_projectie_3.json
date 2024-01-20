@@ -414,7 +414,7 @@
           "uniqueItems": true,
           "allOf": [
             {
-              "minContains": 1,
+              "minContains": 0,
               "maxContains": 99,
               "contains": {
                 "$ref": "#/definitions/pensionCohort"
@@ -429,8 +429,7 @@
         "expectedPensionPaymentDate",
         "totalExpectedPensionPaymentAmount",
         "hedgedExpectedPensionPaymentAmount",
-        "financialInformation",
-        "pension"
+        "financialInformation"
       ]
     },
     "financialInformationReportingPeriod": {

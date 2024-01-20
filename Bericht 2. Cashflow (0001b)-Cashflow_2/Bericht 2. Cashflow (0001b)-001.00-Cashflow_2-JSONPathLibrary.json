@@ -37,6 +37,12 @@
       "test": "BEGIN\n    FOR EACH pensionScheme IN bericht2.party.pension\n        totalNetAmountInCohorts = 0\n        mismatchedCohortRefKeysNet = ''\n\n        FOR EACH cohort IN pensionScheme.pension\n            totalNetAmountInCohorts += cohort.netAmount\n\n            IF cohort.netAmount != (cohort.contributionAmount - cohort.withdrawalAmount) THEN\n                mismatchedCohortRefKeysNet += cohort.refKey + ' '\n            END IF\n        END FOR\n\n        FOR EACH cashflow IN pensionScheme.financialTransaction\n            IF cashflow.netAmount != totalNetAmountInCohorts THEN\n                PRINT 'FT2005: Net amount mismatch in cashflow with refKey: ' + pensionScheme.refKey +\n                      '. Mismatched Cohort RefKeys: ' + mismatchedCohortRefKeysNet\n            END IF\n        END FOR\n    END FOR\nEND\n",
       "message": "FT2005: Net amount mismatch in cashflow with schema refKey:  + pensionScheme.refKey + '. Mismatched Cohort RefKeys: ' + mismatchedCohortRefKeysNet",
       "source": "Pseudocode"
+    },
+    {
+      "id": "BRA1000",
+      "test": "START\n    FOR EACH partyEntity IN bericht14.party:\n        IF partyEntity.entityType == 'sender' OR partyEntity.entityType == 'receiver' OR partyEntity.entityType == 'pensionProvider':\n            IF partyEntity.rsinNumber is empty AND partyEntity.refKey is empty:\n                GIVE ERROR MESSAGE FTA1000\n            END IF\n        END IF\n    END FOR\nEND",
+      "message": "'FT1A1000:  In ' + partyEntity.entityType + ' with organization name '' + partyEntity.organizationName + '', both rsinNumber and refKey are missing. One of them is mandatory'",
+      "source": "Pseudocode rsin-refkey op party"
     }
   ]
 }
