@@ -1,91 +1,91 @@
 {
-    "commonTechnical": [
-        {
-            "entityType": "default",
-            "messageId": "1234567890123456789012",
-            "creationDateTime": "2023-10-27T10:00:00Z",
-            "messageVersion": "114",
-            "testMessage": false,
-            "party": [
-                {
-                    "entityType": "sender",
-                    "refKey": "ABC123",
-                    "rsinNumber": "12345678",
-                    "organizationName": "VoorbeeldBedrijf B.V.",
-                    "applicationSenderName": "ApplicatieNaam",
-                    "party": [
-                        {
-                            "entityType": "contact",
-                            "firstName": "Jan",
-                            "prefixes": "van",
-                            "initials": "J.V.",
-                            "titlesPrefix": "Dr.",
-                            "gender": "M",
-                            "fullName": "Dr. Jan van Jansen"
-                        }
-                    ]
-                },
-                {
-                    "entityType": "receiver",
-                    "refKey": "XYZ789",
-                    "rsinNumber": "87654321",
-                    "organizationName": "OntvangerCorp"
-                }
-            ]
-        }
-    ],
-    "commonFunctional": [
-        {
-            "entityType": "default",
-            "afdDefinitionName": "Vermogen_1",
-            "function": "54",
-            "resending": false,
-            "originalMessageId": "987654321"
-        }
-    ],
-    "party": [
-        {
-            "entityType": "pensionProvider",
-            "refKey": "PENSIOEN123",
-            "rsinNumber": "22233344",
-            "organizationName": "PensioenFonds B.V.",
-            "pension": [
-                {
-                    "entityType": "scheme",
-                    "refKey": "SCHEME456",
-                    "pensionSchemeName": "BasisPensioen",
-                    "startAmount": 100000.00,
-                    "financialInformation": [
-                        {
-                            "entityType": "reportingPeriod",
-                            "startDate": "2023-01-01"
-                        }
-                    ],
-                    "pension": [
-                        {
-                            "entityType": "cohort",
-                            "refKey": "COHORT101",
-                            "startAmount": 60000.00
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    "document": [
-        {
-            "entityType": "default",
-            "refKey": "DOC456",
-            "fileName": "VoorbeeldDocument",
-            "fileExtension": "pdf"
-        }
-    ],
-    "error": [
-        {
-            "entityType": "default",
-            "refKey": "ERR123",
-            "errorCode": "09",
-            "errorCodeExplanation": "Niet gevonden"
-        }
-    ]
+	"commonTechnical": [
+		{
+			"entityType": "default",
+			"messageId": "1234567890123456789012",
+			"creationDateTime": "2023-10-27T10:00:00Z",
+			"messageVersion": "114",
+			"testMessage": false,
+			"party": [
+				{
+					"entityType": "sender",
+					"refKey": "ABC123",
+					"rsinNumber": "12345678",
+					"organizationName": "VoorbeeldBedrijf B.V.",
+					"applicationSenderName": "ApplicatieNaam",
+					"party": [
+						{
+							"entityType": "contact",
+							"firstName": "Jan",
+							"prefixes": "van",
+							"initials": "J.V.",
+							"titlesPrefix": "Dr.",
+							"gender": "M",
+							"fullName": "Dr. Jan van Jansen"
+						}
+					]
+				},
+				{
+					"entityType": "receiver",
+					"refKey": "XYZ789",
+					"rsinNumber": "87654321",
+					"organizationName": "OntvangerCorp"
+				}
+			]
+		}
+	],
+	"commonFunctional": [
+		{
+			"entityType": "default",
+			"afdDefinitionName": "Vermogen_1",
+			"function": "54",
+			"resending": false,
+			"originalMessageId": "987654321"
+		}
+	],
+	"party": [
+		{
+			"entityType": "pensionProvider",
+			"refKey": "PENSIOEN123",
+			"rsinNumber": "22233344",
+			"organizationName": "PensioenFonds B.V.",
+			"pension": [
+				{
+					"entityType": "scheme",
+					"refKey": "SCHEME456",
+					"pensionSchemeName": "BasisPensioen",
+					"startAmount": 100000.00,
+					"financialInformation": [
+						{
+							"entityType": "reportingPeriod",
+							"startDate": "2023-01-01"
+						}
+					],
+					"pension": [
+						{
+							"entityType": "cohort",
+							"refKey": "COHORT101",
+							"startAmount": 60000.00
+						}
+					]
+				}
+			]
+		}
+	],
+	"document": [
+		{
+			"entityType": "default",
+			"refKey": "DOC456",
+			"fileName": "VoorbeeldDocument",
+			"fileExtension": "pdf"
+		}
+	],
+	"error": [
+		{
+			"entityType": "default",
+			"refKey": "ERR123",
+			"errorCode": "09",
+			"errorCodeExplanation": "Zoeksleutel onbekend"
+		}
+	]
 }
