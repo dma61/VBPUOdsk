@@ -1,5 +1,7 @@
 # VBPUOdsk
 
+Please "Watch" this project when you are using it => click the watch-button on the "<> Code" page.
+
 Let op:
 - De inhoudelijke documentatie is/wordt vooralsnog via mail verpreid onder de belanghebbenden.
 - Verbandscontroles zijn nog niet volledig. Ook de voorbeelden zullen nog worden uitgebreid.
