@@ -34,7 +34,7 @@
             "entityType": "default",
             "afdDefinitionName": "Vermogen_1",
             "function": "54",
-            "resending": false,
+            "resending": true,
             "originalMessageId": "987654321"
         }
     ],
