@@ -1,0 +1,3 @@
+# OPEN API SPECIFICATION VBPUO
+
+More info on 1 march 2024
