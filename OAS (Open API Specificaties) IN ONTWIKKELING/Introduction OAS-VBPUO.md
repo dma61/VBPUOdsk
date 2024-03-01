@@ -8,7 +8,8 @@ Deze stap is gezet om enerzijds alle partijen die de REST service gaan implement
 
 De voorgestelde OpenAPI specificatie helpt partijen bij het eenduidig uitwisselen van de berichtstructuren die eerder door SIVI zijn opgesteld. De OpenAPI specificatie is ontwikkeld voor alle 14 berichtstructuren, dus zowel voor SPR als voor FPR.
 
-De specificatie is te vinden op de GitHub: https://github.com/dma61/VBPUOdsk/
+De specificatie is te vinden op de GitHub: [https://github.com/dma61/VBPUOdsk/OAS (Open API Specificaties) IN ONTWIKKELING](https://github.com/dma61/VBPUOdsk/tree/main/OAS%20(Open%20API%20Specificaties)%20IN%20ONTWIKKELING)
+
 
 De OpenAPI specificatie is nog in ontwikkeling, maar er zullen naar alle waarschijlijkheid geen grote wijzigingen meer op plaats vinden. 
 Voor ondersteuning en feedback is het mogelijk om 'issues' aan te maken: https://github.com/dma61/VBPUOdsk/issues
