@@ -9,7 +9,7 @@ info:
     To be decided:\n
     - 01-03-24: Response schema objecten opnemen in losse file en bespreken met Robin\n
     "
-  version: 1.0.3
+  version: 1.0.4
   contact:
     name: SIVI API Support & Issues
     url: https://github.com/dma61/VBPUOdsk/issues
@@ -519,39 +519,6 @@ paths:
                 $ref: '#/components/schemas/PostErrorResponse'
           description: Request failed
       deprecated: false
-  '/processing-report/{prid}':
-    get:
-      summary: One specific processing report.
-      tags:
-        - ProcessingReport
-      security:
-        - OneWelcomeOAuth2:
-          - https://sivi-vermogensbeheerkoppeling/processingReport.write
-      description: >-
-        verhaal
-      operationId: newProcessingReport
-      parameters:
-        - $ref: "#/components/parameters/puvCode"
-        - $ref: "#/components/parameters/xJwsSignature"
-        - name: prid
-          description: Processing report id (these are similar to message ids but not the same).
-          schema:
-            type: integer
-          in: path
-          required: true
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProcessingReport'
-          description: Request processed ok
-        '404':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GeneralErrorResponse'
-          description: Specified processing report id not found
 components:
   schemas:
     Capital:
@@ -685,7 +652,7 @@ components:
             https://sivi-vermogensbeheerkoppeling/valueAmountCohortPool.write: Write valueAmountCohortPool information
             https://sivi-vermogensbeheerkoppeling/valueAmountInvestmentPool.write: Write orderSettlement information
             https://sivi-vermogensbeheerkoppeling/paymentDetailsCreditor.write: Write paymentDetailsCreditor information
-
+            https://sivi-vermogensbeheerkoppeling/processingReport.write: Write processingReport information
   links: {}
   callbacks: {}
 security:
