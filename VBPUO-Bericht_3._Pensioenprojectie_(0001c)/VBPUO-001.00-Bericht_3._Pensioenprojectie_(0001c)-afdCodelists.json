@@ -2,173 +2,137 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "AFD 2.0 codelists",
   "definitions": {
-    "ADNVER": {
-      "description": "Version (NL: Versienummer)",
-      "codelistName": "ADNVER",
+    "AFDRES": {
+      "description": "Reserve type (NL: Type reserve)",
+      "codelistName": "AFDRES",
       "type": "string",
       "oneOf": [
         {
-          "description": "Versienummer 1",
+          "description": "Solidariteitsreserve",
           "const": "1"
         },
         {
-          "description": "Versienummer 2",
+          "description": "Minimaal vereist eigen vermogen (MVEV)",
           "const": "2"
         },
         {
-          "description": "Versienummer 3",
+          "description": "Operationele reserve",
           "const": "3"
         },
         {
-          "description": "Versienummer 4",
+          "description": "Compensatiedepot",
           "const": "4"
         },
         {
-          "description": "Versienummer 5",
-          "const": "5"
-        },
-        {
-          "description": "Versienummer 6",
-          "const": "6"
-        },
-        {
-          "description": "Versienummer 7",
-          "const": "7"
-        },
-        {
-          "description": "Versienummer 8",
-          "const": "8"
-        },
-        {
-          "description": "Versienummer 9",
-          "const": "9"
-        },
-        {
-          "description": "Versienummer 10",
-          "const": "10"
-        },
-        {
-          "description": "Versienummer 11",
-          "const": "11"
-        },
-        {
-          "description": "Versienummer 12",
-          "const": "12"
-        },
-        {
-          "description": "Versienummer 13",
-          "const": "13"
-        },
-        {
-          "description": "Versienummer 14",
-          "const": "14"
-        },
-        {
-          "description": "Versienummer 15",
-          "const": "15"
-        },
-        {
-          "description": "Versienummer 16",
-          "const": "16"
-        },
-        {
-          "description": "Versienummer 17",
-          "const": "17"
-        },
-        {
-          "description": "Versienummer 18",
-          "const": "18"
-        },
-        {
-          "description": "Versienummer 19",
-          "const": "19"
-        },
-        {
-          "description": "Versienummer 20",
-          "const": "20"
-        },
-        {
-          "description": "Versienummer 101",
-          "const": "101"
-        },
-        {
-          "description": "Versienummer 102",
-          "const": "102"
-        },
-        {
-          "description": "Versienummer 103",
-          "const": "103"
-        },
-        {
-          "description": "Versienummer 104",
-          "const": "104"
-        },
-        {
-          "description": "Versienummer 105",
-          "const": "105"
-        },
-        {
-          "description": "Versienummer 106",
-          "const": "106"
-        },
-        {
-          "description": "Versienummer 107",
-          "const": "107"
-        },
-        {
-          "description": "Versienummer 108",
-          "const": "108"
-        },
-        {
-          "description": "Versienummer 109",
-          "const": "109"
-        },
-        {
-          "description": "Versienummer 110",
-          "const": "110"
-        },
-        {
-          "description": "Versienummer 111",
-          "const": "111"
-        },
-        {
-          "description": "Versienummer 112",
-          "const": "112"
-        },
-        {
-          "description": "Versienummer 113",
-          "const": "113"
-        },
-        {
-          "description": "Versienummer 114",
-          "const": "114"
-        },
-        {
-          "description": "Versienummer 999",
-          "const": "999"
+          "description": "Overige",
+          "const": "99"
         }
       ]
     },
-    "ADNGES": {
-      "description": "Gender. (NL: Geslacht)",
-      "codelistName": "ADNGES",
+    "ADNDNS": {
+      "description": "Participation type (NL: Deelname status)",
+      "codelistName": "ADNDNS",
       "type": "string",
       "oneOf": [
         {
-          "description": "Man",
-          "const": "M"
+          "description": "AO aspirant actief",
+          "const": "10"
         },
         {
-          "description": "Onbekend",
-          "const": "O"
+          "description": "AO aspirant niet actief",
+          "const": "15"
         },
         {
-          "description": "Rechtspersoon",
-          "const": "R"
+          "description": "Actief",
+          "const": "16"
         },
         {
-          "description": "Vrouw",
-          "const": "V"
+          "description": "AO actief",
+          "const": "20"
+        },
+        {
+          "description": "Vrijwillige voortzetter",
+          "const": "25"
+        },
+        {
+          "description": "AO niet actief",
+          "const": "35"
+        },
+        {
+          "description": "Slapend",
+          "const": "40"
+        },
+        {
+          "description": "Slapend uitgaande waardeoverdracht",
+          "const": "41"
+        },
+        {
+          "description": "Pensioentrekkende",
+          "const": "60"
+        },
+        {
+          "description": "Deeltijd pensioentrekkende",
+          "const": "61"
+        },
+        {
+          "description": "Deeltijd pensioentrekkende actief",
+          "const": "62"
+        },
+        {
+          "description": "Deeltijd pensioentrekkende slapend",
+          "const": "63"
+        },
+        {
+          "description": "Bijzondere partner",
+          "const": "70"
+        },
+        {
+          "description": "Bijzondere partner geconverteerd",
+          "const": "71"
+        },
+        {
+          "description": "Bijzondere partner met verevende rechten",
+          "const": "72"
+        },
+        {
+          "description": "Uitkerend",
+          "const": "80"
+        },
+        {
+          "description": "Overleden",
+          "const": "100"
+        },
+        {
+          "description": "Afkoop",
+          "const": "110"
+        },
+        {
+          "description": "Afkoop met achterblijvend bijz. partner pensioen",
+          "const": "111"
+        },
+        {
+          "description": "Ontslag zonder rechten",
+          "const": "120"
+        },
+        {
+          "description": "Elders geadministreerd",
+          "const": "130"
+        },
+        {
+          "description": "Uitgaande waardeoverdracht",
+          "const": "140"
+        },
+        {
+          "description": "Afstand rechten",
+          "const": "150"
+        },
+        {
+          "description": "Toekomstig",
+          "const": "200"
+        },
+        {
+          "description": "Anders",
+          "const": "999"
         }
       ]
     }
