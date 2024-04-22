@@ -4,18 +4,17 @@
 			"entityType": "default",
 			"messageId": "1234567890123456789012",
 			"creationDateTime": "2023-10-28T10:00:00Z",
-			"messageVersion": "114",
 			"testMessage": false,
 			"party": [
 				{
 					"entityType": "receiver",
 					"refKey": "recv001",
-					"rsinNumber": "123456789",
+					"rsinNumber": "12345678",
 					"organizationName": "Pension Fund A"
 				},
 				{
 					"entityType": "sender",
-					"rsinNumber": "987654321",
+					"rsinNumber": "87654321",
 					"organizationName": "Insurance Company B",
 					"refKey": "send001",
 					"applicationSenderName": "InsurAppV3"
@@ -28,15 +27,14 @@
 			"entityType": "default",
 			"function": "54",
 			"afdDefinitionName": "Rendementsinformatie_4",
-			"resending": false,
+			"afdDefinitionVersion": "versienummer",
 			"originalMessageId": "98765432109876543210"
 		}
 	],
 	"party": [
 		{
 			"entityType": "pensionProvider",
-			"refKey": "PENSIOEN123",
-			"rsinNumber": "12345678",
+			"puvCode": "U0003",
 			"organizationName": "PensioenFonds B.V.",
 			"pension": [
 				{
@@ -57,7 +55,7 @@
 							"description": "Aandelenfonds",
 							"startAmount": 500000.00,
 							"netAmount": 50000.00,
-							"endAmount": 575000.00,
+							"endAmount": 550000.00,
 							"returnPercentage": 5.00,
 							"returnAmount": 25000.00
 						}
@@ -71,7 +69,10 @@
 							"protectionReturnPercentage": 2.00,
 							"excessReturnPercentage": 3.00,
 							"protectionReturnAmount": 6000.00,
-							"excessReturnAmount": 9000.00
+							"excessReturnAmount": 9000.00,
+							"reserveIndicator": false,
+							"startAge": 300,
+							"endAge": 540
 						},
 						{
 							"entityType": "cohort",
@@ -81,9 +82,46 @@
 							"protectionReturnPercentage": 2.50,
 							"excessReturnPercentage": 3.50,
 							"protectionReturnAmount": 8750.00,
-							"excessReturnAmount": 12250.00
+							"excessReturnAmount": 12250.00,
+							"reserveIndicator": false,
+							"startAge": 540,
+							"endAge": 780
 						}
 					]
+				},
+				{
+					"entityType": "scheme",
+					"refKey": "SCHEME789",
+					"pensionSchemeName": "PlusPensioen",
+					"financialInformation": [
+						{
+							"entityType": "reportingPeriod",
+							"startDate": "2024-01-01",
+							"endDate": "2024-12-31"
+						}
+					],
+					"investment": [
+						{
+							"entityType": "portfolio",
+							"refKey": "PORT225",
+							"description": "Vastgoedfonds",
+							"startAmount": 600000.00,
+							"netAmount": 75000.00,
+							"endAmount": 675000.00,
+							"returnPercentage": 6.00,
+							"returnAmount": 30000.00
+						},{
+							"entityType": "portfolio",
+							"refKey": "PORT1225",
+							"description": "Liquiditeitsfonds",
+							"startAmount": 330000.00,
+							"netAmount": 6000.00,
+							"endAmount": 336000.00,
+							"returnPercentage": 6.00,
+							"returnAmount": 30000.00
+						}
+					]
+				
 				}
 			]
 		}
