@@ -12,7 +12,7 @@
 					"organizationName": "Zender Organisatie",
 					"applicationSenderName": "ApplicatieNaam",
 					"party": [
-						{
+						{	"entityType": "contact",						
 							"emailWork": "j.v.Jansen@voorbeeldbedrijf.nl",
 							"workPhoneNumber": "+31678717607"
 						}
