@@ -73,6 +73,7 @@
 							"entityType": "payment",
 							"refKey": "pay002",
 							"hedgedExpectedPensionPaymentAmount": 200000.00,
+							"expectedPensionPaymentDate": "2045-01-01",
 							"amount": 400000.00
 						}
 					],
@@ -81,7 +82,6 @@
 							"entityType": "cohort",
 							"refKey": "cohort2030",
 							"description": "2030 Retirement Group",
-							"expectedPensionPaymentAmount": 23000.00,
 							"participationStatus": "16",
 							"reserveIndicator": false,
 							"startAge": 360,
