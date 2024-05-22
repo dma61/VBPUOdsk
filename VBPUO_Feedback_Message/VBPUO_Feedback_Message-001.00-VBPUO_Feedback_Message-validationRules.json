@@ -1,0 +1,17 @@
+{
+  "commonFunctional": {
+    "productName": "VBPUO_Feedback_Message",
+    "definitionVersion": "001.00",
+    "startDate": "20240501",
+    "functionDescription": "VBPUO_Feedback_Message",
+    "afdDefinitionChangeLog": "Initiële versie 20240522"
+  },
+  "rule": [
+    {
+      "id": "FBM0011",
+      "test": "commonFunctional[?statusType == '0'] | [?length(error[?entityType == 'default']) == `0`]\n",
+      "message": "FBM0011 a feedback_message with one or more statusType's with value 0 (not accepted) should have an error explanation. ",
+      "source": "Feedback_Message"
+    }
+  ]
+}
