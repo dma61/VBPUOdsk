@@ -17,26 +17,25 @@
 			"statusType": "0"
 		}
 	],
-	"error": [ 
+	"error": [
 		{
 			"entityType": "default",
 			"refKey": "error1",
 			"errorCode": "12",
 			"errorCodeExplanation": "The following cohort ids are missing from this message: cohort123, cohort 111"
-		}, 
+		},
 		{
 			"entityType": "default",
 			"refKey": "error2",
 			"errorCode": "12",
 			"errorCodeExplanation": "Total start amount is not equal to sum of start amounts of cohorts "
-
 		}
 	],
 	"party": [
 		{
 			"entityType": "pensionProvider",
 			"organizationName": "Pension Provider XYZ",
-			"puvCode": "UXXXX"
+			"puvCode": "U0003"
 		}
 	]
 }
