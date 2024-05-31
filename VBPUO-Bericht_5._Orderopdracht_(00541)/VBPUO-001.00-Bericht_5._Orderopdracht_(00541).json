@@ -3,7 +3,7 @@
   "description": "JSON Schema SIVI 2.0",
   "//comment": {
     "functionDescription": "Bericht_5._Orderopdracht_(00541)",
-    "afdDefinitionChangeLog": "20240408 1144 uitlevering"
+    "afdDefinitionChangeLog": "20240529 1532 uitlevering (AOS 001.01)"
   },
   "definitions": {
     "commonFunctional": {
@@ -19,13 +19,15 @@
           "description": "Name of the AFD-definition. (NL: De AFD definitienaam van o.a. webservices en verzekeringsproducten.)",
           "customDescription": "Soort bericht",
           "type": "string",
-          "maxLength": 80
+          "maxLength": 80,
+          "const": "VBPUO-001.00-Bericht_5._Orderopdracht_(00541)"
         },
         "afdDefinitionVersion": {
           "description": "Version of the AFD-definition. (NL: Met AFD definitieversienummer wordt aangegeven over welke versie van de (product)definitie wordt gecommuniceerd.)",
           "customDescription": "Versie van de standaard",
           "type": "string",
-          "maxLength": 80
+          "maxLength": 80,
+          "const": "20240529 1532"
         },
         "originalMessageId": {
           "description": "The messageId of the original message, which is replaced by this message. (NL: MessageId van het oorspronkelijke bericht, dat wordt vervangen door dit bericht.)",
@@ -275,61 +277,6 @@
         "fileExtension"
       ]
     },
-    "error": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "entityType": {
-          "description": "Unique identification of an entity. (NL: De unieke identificatie van een entiteit.)",
-          "type": "string",
-          "const": "default"
-        },
-        "errorCode": {
-          "description": "Error code (NL: Soort foutmelding code)",
-          "customDescription": "Error code type. (NL: Soort foutmelding code.)",
-          "codelistName": "ADNFTM",
-          "type": "string",
-          "oneOf": [
-            {
-              "const": "09"
-            },
-            {
-              "const": "11"
-            },
-            {
-              "const": "12"
-            },
-            {
-              "const": "13"
-            },
-            {
-              "const": "14"
-            },
-            {
-              "const": "99"
-            }
-          ]
-        },
-        "errorCodeExplanation": {
-          "description": "Explanation of the error message. (NL: Toelichting op de soort foutmelding.)",
-          "customDescription": "Explanation of the error message. (NL: Toelichting op de soort foutmelding.)",
-          "type": "string",
-          "maxLength": 300
-        },
-        "refKey": {
-          "description": "Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)",
-          "customDescription": "Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)",
-          "type": "string",
-          "maxLength": 70
-        }
-      },
-      "required": [
-        "entityType",
-        "errorCode",
-        "errorCodeExplanation",
-        "refKey"
-      ]
-    },
     "partyPensionProvider": {
       "type": "object",
       "additionalProperties": false,
@@ -352,35 +299,10 @@
           "maxLength": 8
         },
         "puvCode": {
-          "description": "Code to uniquely identify pension providers (PUVs). (NL: Code om Code om pensioenuitvoerders (PUV’s), eenduidig en uniek te kunnen identificeren.)",
-          "customDescription": "ID van het pensioenuitvoerder (PUV-code) / Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)",
-          "type": "string",
-          "oneOf": [
-            {
-              "const": "U0003"
-            },
-            {
-              "const": "U0005"
-            },
-            {
-              "const": "U0007"
-            },
-            {
-              "const": "U0009"
-            },
-            {
-              "const": "U0010"
-            },
-            {
-              "const": "U0013"
-            },
-            {
-              "const": "U0017"
-            },
-            {
-              "const": "U0018"
-            }
-          ]
+          "description": "Pension provider (NL: Pensioenuitvoerder)",
+          "codelistName": "AFDIDP",
+          "$ref": "VBPUO-001.00-Bericht_5._Orderopdracht_(00541)-afdCodelists.json#/definitions/AFDIDP",
+          "type": "string"
         },
         "pension": {
           "type": "array",
@@ -647,19 +569,6 @@
           "maxContains": 99,
           "contains": {
             "$ref": "#/definitions/document"
-          }
-        }
-      ]
-    },
-    "error": {
-      "type": "array",
-      "uniqueItems": true,
-      "allOf": [
-        {
-          "minContains": 0,
-          "maxContains": 99,
-          "contains": {
-            "$ref": "#/definitions/error"
           }
         }
       ]

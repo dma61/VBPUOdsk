@@ -1,48 +1,15 @@
 {
   "commonFunctional": {
-    "productName": "Bericht 2. Cashflow (0001b)",
+    "productName": "VBPUO",
     "definitionVersion": "001.00",
-    "startDate": "20240101",
-    "functionDescription": "Cashflow_2",
-    "tag": "CASHFLOW0001B",
-    "afdDefinitionChangeLog": "Initieel"
+    "startDate": "20240501",
+    "functionDescription": "Bericht_2._Cashflow_(0001b)",
+    "afdDefinitionChangeLog": "20240529 1532 uitlevering"
   },
   "rule": [
     {
       "id": "BR1",
-      "test": "BEGIN\n    FOR EACH pensionScheme IN bericht2.party.pension\n        FOR EACH cohort IN pensionScheme.pension\n            IF cohort.contributionAmount != 0 OR cohort.withdrawalAmount != 0 THEN\n                calculatedNetAmount = cohort.contributionAmount - cohort.withdrawalAmount\n\n                IF calculatedNetAmount != cohort.netAmount THEN\n                    PRINT FT2001\n                END IF\n            END IF\n        END FOR\n    END FOR\nEND\n",
-      "message": "FT2001: Net amount mismatch in cohort with refKey: ' + cohort.refKey",
-      "source": "Pseudo code"
-    },
-    {
-      "id": "BR2",
-      "test": "BEGIN\n    FOR EACH pensionScheme IN bericht2.party.pension\n        FOR EACH cashflow IN pensionScheme.financialTransaction\n            IF cashflow.contributionAmount != 0 OR cashflow.withdrawalAmount != 0 THEN\n                calculatedNetAmount = cashflow.contributionAmount - cashflow.withdrawalAmount\n\n                IF calculatedNetAmount != cashflow.netAmount THEN\n                    PRINT 'FT2002: Net amount mismatch in cashflow with refKey: ' + pensionScheme.refKey\n                END IF\n            END IF\n        END FOR\n    END FOR\nEND\n\n",
-      "message": "FT2002: Net amount mismatch in cashflow under schema with refKey: ' + pensionScheme.refKey",
-      "source": "Pseudocod2"
-    },
-    {
-      "id": "BR3",
-      "test": "BEGIN\n    FOR EACH pensionScheme IN bericht2.party.pension\n        totalContributionInCohorts = 0\n        mismatchedCohortRefKeys = ''\n\n        FOR EACH cohort IN pensionScheme.pension\n            totalContributionInCohorts += cohort.contributionAmount\n            IF cohort.contributionAmount > 0 THEN\n                mismatchedCohortRefKeys += cohort.refKey + ', '\n            END IF\n        END FOR\n\n        FOR EACH cashflow IN pensionScheme.financialTransaction\n            IF cashflow.contributionAmount != totalContributionInCohorts THEN\n                PRINT FT2003\n            END IF\n        END FOR\n    END FOR\nEND",
-      "message": "FT2003: Contribution amount mismatch in cashflow with Schema refKey: + pensionScheme.refKey + '. Mismatched Cohort RefKeys: ' + mismatchedCohortRefKeys",
-      "source": "Pseudocode"
-    },
-    {
-      "id": "BR4",
-      "test": "BEGIN\n    FOR EACH pensionScheme IN bericht2.party.pension\n        totalWithdrawalInCohorts = 0\n        mismatchedCohortRefKeysWithdrawal = ''\n\n        FOR EACH cohort IN pensionScheme.pension\n            totalWithdrawalInCohorts += cohort.withdrawalAmount\n\n            IF cohort.withdrawalAmount > 0 THEN\n                mismatchedCohortRefKeysWithdrawal += cohort.refKey + ' '\n            END IF\n        END FOR\n\n        FOR EACH cashflow IN pensionScheme.financialTransaction\n            IF cashflow.withdrawalAmount != totalWithdrawalInCohorts THEN\n                PRINT 'FT2004: Withdrawal amount mismatch in cashflow with refKey: ' + pensionScheme.refKey +\n                      '. Mismatched Cohort RefKeys: ' + mismatchedCohortRefKeysWithdrawal\n            END IF\n        END FOR\n    END FOR\nEND\n",
-      "message": "FT2004: Withdrawal amount mismatch in cashflow with Schema refKey: + pensionScheme.refKey + '. Mismatched Cohort RefKeys: ' + mismatchedCohortRefKeysWithdrawal",
-      "source": "Pseudocode"
-    },
-    {
-      "id": "BR5",
-      "test": "BEGIN\n    FOR EACH pensionScheme IN bericht2.party.pension\n        totalNetAmountInCohorts = 0\n        mismatchedCohortRefKeysNet = ''\n\n        FOR EACH cohort IN pensionScheme.pension\n            totalNetAmountInCohorts += cohort.netAmount\n\n            IF cohort.netAmount != (cohort.contributionAmount - cohort.withdrawalAmount) THEN\n                mismatchedCohortRefKeysNet += cohort.refKey + ' '\n            END IF\n        END FOR\n\n        FOR EACH cashflow IN pensionScheme.financialTransaction\n            IF cashflow.netAmount != totalNetAmountInCohorts THEN\n                PRINT 'FT2005: Net amount mismatch in cashflow with refKey: ' + pensionScheme.refKey +\n                      '. Mismatched Cohort RefKeys: ' + mismatchedCohortRefKeysNet\n            END IF\n        END FOR\n    END FOR\nEND\n",
-      "message": "FT2005: Net amount mismatch in cashflow with schema refKey:  + pensionScheme.refKey + '. Mismatched Cohort RefKeys: ' + mismatchedCohortRefKeysNet",
-      "source": "Pseudocode"
-    },
-    {
-      "id": "BRA1000",
-      "test": "START\n    FOR EACH partyEntity IN bericht14.party:\n        IF partyEntity.entityType == 'sender' OR partyEntity.entityType == 'receiver' OR partyEntity.entityType == 'pensionProvider':\n            IF partyEntity.rsinNumber is empty AND partyEntity.refKey is empty:\n                GIVE ERROR MESSAGE FTA1000\n            END IF\n        END IF\n    END FOR\nEND",
-      "message": "'FT1A1000:  In ' + partyEntity.entityType + ' with organization name '' + partyEntity.organizationName + '', both rsinNumber and refKey are missing. One of them is mandatory'",
-      "source": "Pseudocode rsin-refkey op party"
+      "test": ""
     }
   ]
 }

@@ -1,11 +1,15 @@
 {
   "commonFunctional": {
-    "productName": "Bericht 6. Ordersettlement (00542)",
+    "productName": "VBPUO",
     "definitionVersion": "001.00",
-    "startDate": "20240101",
-    "functionDescription": "OrderOpdrachtSettlement_5-6",
-    "tag": "ORDEROPDRACHT00541",
-    "afdDefinitionChangeLog": "Initieel"
+    "startDate": "20240501",
+    "functionDescription": "Bericht_6._Ordersettlement_(00542)",
+    "afdDefinitionChangeLog": "20240529 1532 uitlevering"
   },
-  "rule": []
+  "rule": [
+    {
+      "id": "BR1",
+      "test": ""
+    }
+  ]
 }

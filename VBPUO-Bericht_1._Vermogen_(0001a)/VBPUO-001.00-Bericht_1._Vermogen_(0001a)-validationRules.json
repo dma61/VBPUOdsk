@@ -1,18 +1,15 @@
 {
   "commonFunctional": {
-    "productName": "Bericht 1. Vermogen (0001a)",
+    "productName": "VBPUO",
     "definitionVersion": "001.00",
-    "startDate": "20240101",
-    "functionDescription": "Vermogen_1",
-    "tag": "VERMOGEN0001A",
-    "afdDefinitionChangeLog": "Initieel"
+    "startDate": "20240501",
+    "functionDescription": "Bericht_1._Vermogen_(0001a)",
+    "afdDefinitionChangeLog": "20240529 1532 uitlevering"
   },
   "rule": [
     {
-      "id": "BRA1000",
-      "test": "START\n    FOR EACH partyEntity IN bericht14.party:\n        IF partyEntity.entityType == 'sender' OR partyEntity.entityType == 'receiver' OR partyEntity.entityType == 'pensionProvider':\n            IF partyEntity.rsinNumber is empty AND partyEntity.refKey is empty:\n                GIVE ERROR MESSAGE FTA1000\n            END IF\n        END IF\n    END FOR\nEND",
-      "message": "'FT1A1000:  In ' + partyEntity.entityType + ' with organization name '' + partyEntity.organizationName + '', both rsinNumber and refKey are missing. One of them is mandatory'",
-      "source": "Pseudocode rsin-refkey op party"
+      "id": "BR1",
+      "test": ""
     }
   ]
 }

@@ -2,9 +2,14 @@
   "commonFunctional": {
     "productName": "VBPUO",
     "definitionVersion": "001.00",
-    "startDate": "20240401",
+    "startDate": "20240501",
     "functionDescription": "Bericht_3._Pensioenprojectie_(0001c)",
-    "afdDefinitionChangeLog": "20240408 1144 uitlevering"
+    "afdDefinitionChangeLog": "20240529 1532 uitlevering"
   },
-  "rule": []
+  "rule": [
+    {
+      "id": "BR1",
+      "test": ""
+    }
+  ]
 }

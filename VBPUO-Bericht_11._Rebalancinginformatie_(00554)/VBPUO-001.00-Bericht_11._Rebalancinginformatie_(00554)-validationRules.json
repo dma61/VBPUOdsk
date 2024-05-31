@@ -1,11 +1,15 @@
 {
   "commonFunctional": {
-    "productName": "Bericht 11. Rebalancinginformatie (00554)",
+    "productName": "VBPUO",
     "definitionVersion": "001.00",
-    "startDate": "20240101",
-    "functionDescription": "Rebalancinginformatie_11",
-    "tag": "STUURINFOBELEGGINGSPOOLS",
-    "afdDefinitionChangeLog": "Initieel"
+    "startDate": "20240501",
+    "functionDescription": "Bericht_11._Rebalancinginformatie_(00554)",
+    "afdDefinitionChangeLog": "20240529 1532 uitlevering"
   },
-  "rule": []
+  "rule": [
+    {
+      "id": "BR1",
+      "test": ""
+    }
+  ]
 }

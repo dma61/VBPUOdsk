@@ -1,11 +1,15 @@
 {
   "commonFunctional": {
-    "productName": "Bericht 10. Stuurinformatiebeleggingspools (00553)",
+    "productName": "VBPUO",
     "definitionVersion": "001.00",
-    "startDate": "20240101",
-    "functionDescription": "Stuurinformatiebeleggingspools_10",
-    "tag": "STUURINFOBELEGGINGSPOOLS",
-    "afdDefinitionChangeLog": "Initieel"
+    "startDate": "20240501",
+    "functionDescription": "Bericht_10._Stuurinformatiebeleggingspools_(00553)",
+    "afdDefinitionChangeLog": "20240529 1532 uitlevering"
   },
-  "rule": []
+  "rule": [
+    {
+      "id": "BR1",
+      "test": ""
+    }
+  ]
 }

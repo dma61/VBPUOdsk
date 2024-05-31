@@ -1,11 +1,15 @@
 {
   "commonFunctional": {
-    "productName": "Bericht 9. PUO-reconciliatie-informatie (00552b)",
+    "productName": "VBPUO",
     "definitionVersion": "001.00",
-    "startDate": "20240101",
-    "functionDescription": "PUO Reconciliatie-info_9",
-    "tag": "PUORECONCILIATIEINFORMATIE",
-    "afdDefinitionChangeLog": "Initieel"
+    "startDate": "20240501",
+    "functionDescription": "Bericht_9._PUO-reconciliatie-informatie_(00552b)",
+    "afdDefinitionChangeLog": "20240529 1532 uitlevering"
   },
-  "rule": []
+  "rule": [
+    {
+      "id": "BR1",
+      "test": ""
+    }
+  ]
 }

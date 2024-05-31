@@ -1,11 +1,15 @@
 {
   "commonFunctional": {
-    "productName": "Bericht 12. Waarde-informatie cohortenpool (00555a)",
+    "productName": "VBPUO",
     "definitionVersion": "001.00",
-    "startDate": "20240101",
-    "functionDescription": "Waardeinformatiecohortenpool_12",
-    "tag": "WAARDEINFCOHORTPOOL",
-    "afdDefinitionChangeLog": "Initieel"
+    "startDate": "20240501",
+    "functionDescription": "Bericht_12._Waarde-informatie_cohortenpool_(00555a)",
+    "afdDefinitionChangeLog": "20240529 1532 uitlevering"
   },
-  "rule": []
+  "rule": [
+    {
+      "id": "BR1",
+      "test": ""
+    }
+  ]
 }

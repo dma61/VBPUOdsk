@@ -1,11 +1,15 @@
 {
   "commonFunctional": {
-    "productName": "Bericht 8. Reconciliatie-informatie (00552a)",
+    "productName": "VBPUO",
     "definitionVersion": "001.00",
-    "startDate": "20240101",
-    "functionDescription": "Reconciliatie-info_8",
-    "tag": "ORDEROPDRACHT00541",
-    "afdDefinitionChangeLog": "Initieel"
+    "startDate": "20240501",
+    "functionDescription": "Bericht_8._Reconciliatie-informatie_(00552a)",
+    "afdDefinitionChangeLog": "20240529 1532 uitlevering"
   },
-  "rule": []
+  "rule": [
+    {
+      "id": "BR1",
+      "test": ""
+    }
+  ]
 }
