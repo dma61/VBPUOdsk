@@ -7,7 +7,7 @@ De JSON-schema’s die horen bij de mei release van de VBPUO-standaard zijn inmi
 
 ## Wijzigingen
 
-In deze release zijn de onderstaande wijzigingen doorgevoerd. Voor gedetailleerde informatie verwijzen we naar de bijbehorende issues op de GitHub-pagina (het overzicht is te vinden op: ["mijlpaal" / "milestone" 202405](https://github.com/dma61/VBPUOdsk/milestone/2). 
+In deze release zijn de onderstaande wijzigingen doorgevoerd. Voor gedetailleerde informatie verwijzen we naar de bijbehorende issues op de GitHub-pagina (het overzicht is te vinden op: ["mijlpaal" / "milestone" 202405](https://github.com/search?q=milestone%3A%22202405+release%22&type=issues).
 
 - **[Issue #31](https://github.com/org/repo/issues/31)**: De tabel AFDIDP is gekoppeld aan het attribuut PuvCode zodat alle bekende Nederlandse pensioenuitvoerders kunnen worden geselecteerd.
 - **[Issue #49](https://github.com/org/repo/issues/49)**: De afdDefinitionName en afdDefinitionVersion zijn – handmatig – toegevoegd aan de JSON-schema’s als constanten.
@@ -39,7 +39,7 @@ The JSON schemas related to the May release of the VBPUO standard have been publ
 
 ## Changes
 
-The following changes have been implemented in this release. For detailed information, please refer to the associated issues on the GitHub page (the overview can be found at: ["milestone" 202405](https://github.com/dma61/VBPUOdsk/milestone/2).
+The following changes have been implemented in this release. For detailed information, please refer to the associated issues on the GitHub page (the overview can be found at: ["milestone" 202405](https://github.com/search?q=milestone%3A%22202405+release%22&type=issues).
 
 - **[Issue #31](https://github.com/org/repo/issues/31)**: The AFDIDP table is linked to the PuvCode attribute so that all known Dutch pension providers can be selected.
 - **[Issue #49](https://github.com/org/repo/issues/49)**: The afdDefinitionName and afdDefinitionVersion have been manually added to the JSON schemas as constants.
