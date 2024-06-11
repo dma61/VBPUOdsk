@@ -31,8 +31,8 @@
 	"commonFunctional": [
 		{
 			"entityType": "default",
-			"afdDefinitionName": "Vermogen_1",
-			"afdDefinitionVersion": "versienummer",
+			"afdDefinitionName": "VBPUO-001.00-Bericht_1._Vermogen_(0001a)",
+			"afdDefinitionVersion": "20240529 1532",
 			"function": "01",
 			"originalMessageId": "987654321"
 		}

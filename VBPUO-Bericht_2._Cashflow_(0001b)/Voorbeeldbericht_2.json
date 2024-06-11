@@ -30,8 +30,8 @@
 	"commonFunctional": [
 		{
 			"entityType": "default",
-			"afdDefinitionName": "Cashflow_2",
-			"afdDefinitionVersion": "versienummer",
+			"afdDefinitionName": "VBPUO-001.00-Bericht_2._Cashflow_(0001b)",
+			"afdDefinitionVersion": "20240529 1532",
 			"function": "01",
 			"originalMessageId": "987654321"
 		}

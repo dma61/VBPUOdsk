@@ -25,8 +25,8 @@
 	"commonFunctional": [
 		{
 			"entityType": "default",
-			"afdDefinitionName": "Pensioen_projectie_3",
-			"afdDefinitionVersion": "1.0",
+			"afdDefinitionName": "VBPUO-001.00-Bericht_3._Pensioenprojectie_(0001c)",
+			"afdDefinitionVersion": "20240529 1532",
 			"function": "01",
 			"originalMessageId": "orig123456"
 		}
