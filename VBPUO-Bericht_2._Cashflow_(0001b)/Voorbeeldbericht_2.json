@@ -21,7 +21,7 @@
 				{
 					"entityType": "receiver",
 					"refKey": "REC123",
-					"rsinNumber": "87654321",
+					"rsinNumber": "987654321",
 					"organizationName": "Ontvanger Organisatie"
 				}
 			]
@@ -31,7 +31,7 @@
 		{
 			"entityType": "default",
 			"afdDefinitionName": "VBPUO-001.00-Bericht_2._Cashflow_(0001b)",
-			"afdDefinitionVersion": "20240529 1532",
+			"afdDefinitionVersion": "001.02",
 			"function": "01",
 			"originalMessageId": "987654321"
 		}
@@ -39,7 +39,7 @@
 	"party": [
 		{
 			"entityType": "pensionProvider",
-			"rsinNumber": "12345678",
+			"rsinNumber": "123456789",
 			"organizationName": "Pensioenverstrekker",
 			"puvCode": "U0003",
 			"pension": [

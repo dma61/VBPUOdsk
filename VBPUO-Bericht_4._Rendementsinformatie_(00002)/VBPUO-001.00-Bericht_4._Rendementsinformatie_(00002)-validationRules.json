@@ -2,9 +2,9 @@
   "commonFunctional": {
     "productName": "VBPUO",
     "definitionVersion": "001.00",
-    "startDate": "20240501",
+    "startDate": "20240801",
     "functionDescription": "Bericht_4._Rendementsinformatie_(00002)",
-    "afdDefinitionChangeLog": "20240529 1532 uitlevering"
+    "afdDefinitionChangeLog": "20240808 0907 uitlevering (AOS 001.02) - juli"
   },
   "rule": [
     {

@@ -10,14 +10,14 @@
 					"entityType": "sender",
 					"refKey": "send001",
 					"organizationName": "Insurance Company B",
-					"rsinNumber": "98765432",
+					"rsinNumber": "987654321",
 					"applicationSenderName": "InsurAppV3"
 				},
 				{
 					"entityType": "receiver",
 					"refKey": "recv001",
 					"organizationName": "Pension Fund A",
-					"rsinNumber": "12345678"
+					"rsinNumber": "123456789"
 				}
 			]
 		}
@@ -26,7 +26,7 @@
 		{
 			"entityType": "default",
 			"afdDefinitionName": "VBPUO-001.00-Bericht_3._Pensioenprojectie_(0001c)",
-			"afdDefinitionVersion": "20240529 1532",
+			"afdDefinitionVersion": "001.02",
 			"function": "01",
 			"originalMessageId": "orig123456"
 		}
@@ -35,7 +35,7 @@
 		{
 			"entityType": "pensionProvider",
 			"organizationName": "Pension Provider XYZ",
-			"rsinNumber": "55566677",
+			"rsinNumber": "555666779",
 			"puvCode": "U0003",
 			"pension": [
 				{

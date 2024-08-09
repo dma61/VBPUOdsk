@@ -9,7 +9,7 @@
 				{
 					"entityType": "sender",
 					"refKey": "ABC123",
-					"rsinNumber": "12345678",
+					"rsinNumber": "123456789",
 					"organizationName": "VoorbeeldBedrijf B.V.",
 					"applicationSenderName": "ApplicatieNaam",
 					"party": [
@@ -22,7 +22,7 @@
 				{
 					"entityType": "receiver",
 					"refKey": "XYZ789",
-					"rsinNumber": "87654321",
+					"rsinNumber": "987654321",
 					"organizationName": "OntvangerCorp1"
 				}
 			]
@@ -32,7 +32,7 @@
 		{
 			"entityType": "default",
 			"afdDefinitionName": "VBPUO-001.00-Bericht_1._Vermogen_(0001a)",
-			"afdDefinitionVersion": "20240529 1532",
+			"afdDefinitionVersion": "001.02",
 			"function": "01",
 			"originalMessageId": "987654321"
 		}
@@ -41,7 +41,7 @@
 		{
 			"entityType": "pensionProvider",
 			"puvCode": "U0003",
-			"rsinNumber": "22233344",
+			"rsinNumber": "222333449",
 			"organizationName": "PensioenFonds B.V.",
 			"pension": [
 				{

@@ -4,8 +4,9 @@
       "entityType": "default",
       "function": "02",
       "resending": false,
-      "afdDefinitionName": "OrderOpdrachtSettlement_6",
-      "originalMessageId": "12345"
+      "afdDefinitionName": "VBPUO-001.00-Bericht_6._Ordersettlement_(00542)",
+      "afdDefinitionVersion": "001.02",
+      "originalMessageId": "20240529 1532"
     }
   ],
   "commonTechnical": [
@@ -19,13 +20,13 @@
         {
           "entityType": "sender",
           "refKey": "recv001",
-          "rsinNumber": "12345678",
+          "rsinNumber": "123456789",
           "organizationName": "Pension Fund A",
           "applicationSenderName": "OurApp"
         },
         {
           "entityType": "receiver",
-          "rsinNumber": "87654321",
+          "rsinNumber": "876543219",
           "organizationName": "Investment Firm B",
           "refKey": "send001"
         }
@@ -36,7 +37,7 @@
     {
       "entityType": "pensionProvider",
       "refKey": "pensProv002",
-      "rsinNumber": "11223344",
+      "rsinNumber": "112233449",
       "organizationName": "Pension Provider YZ",
       "pension": [
         {

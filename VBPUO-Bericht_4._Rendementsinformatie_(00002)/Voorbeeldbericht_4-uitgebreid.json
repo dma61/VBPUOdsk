@@ -9,12 +9,12 @@
 				{
 					"entityType": "receiver",
 					"refKey": "recv001",
-					"rsinNumber": "12345678",
+					"rsinNumber": "123456789",
 					"organizationName": "Pension Fund A"
 				},
 				{
 					"entityType": "sender",
-					"rsinNumber": "87654321",
+					"rsinNumber": "987654321",
 					"organizationName": "Insurance Company B",
 					"refKey": "send001",
 					"applicationSenderName": "InsurAppV3"
@@ -27,7 +27,7 @@
 			"entityType": "default",
 			"function": "54",
 			"afdDefinitionName": "VBPUO-001.00-Bericht_4._Rendementsinformatie_(00002)",
-			"afdDefinitionVersion": "20240529 1532",
+			"afdDefinitionVersion": "001.02",
 			"originalMessageId": "98765432109876543210"
 		}
 	],

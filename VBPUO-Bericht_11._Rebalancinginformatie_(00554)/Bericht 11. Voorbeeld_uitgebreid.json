@@ -4,7 +4,8 @@
       "entityType": "default",
       "resending": false,
       "originalMessageId": "msg12345",
-      "afdDefinitionName": "Rebalancinginformatie_11",
+      "afdDefinitionName": "VBPUO-001.00-Bericht_11._Rebalancinginformatie_(00554)",
+      "afdDefinitionVersion": "001.02",
       "function": "54"
     }
   ],
@@ -42,7 +43,7 @@
       "entityType": "pensionProvider",
       "refKey": "ghi789",
       "organizationName": "PensionProviderXYZ",
-      "rsinNumber": "12398745",
+      "rsinNumber": "123987459",
       "pension": [
         {
           "entityType": "scheme",

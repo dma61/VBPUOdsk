@@ -3,7 +3,7 @@
   "description": "JSON Schema SIVI 2.0",
   "//comment": {
     "functionDescription": "Bericht_10._Stuurinformatiebeleggingspools_(00553)",
-    "afdDefinitionChangeLog": "20240529 1532 uitlevering (AOS 001.01)"
+    "afdDefinitionChangeLog": "20240808 0907 uitlevering (AOS 001.02) - juli"
   },
   "definitions": {
     "commonFunctional": {
@@ -24,10 +24,10 @@
         },
         "afdDefinitionVersion": {
           "description": "Version of the AFD-definition. (NL: Met AFD definitieversienummer wordt aangegeven over welke versie van de (product)definitie wordt gecommuniceerd.)",
-          "customDescription": "Versie van de standaard",
+          "customDescription": "Versie van het JSON schema",
           "type": "string",
           "maxLength": 80,
-          "const": "20240529 1532"
+          "const": "001.02"
         },
         "originalMessageId": {
           "description": "The messageId of the original message, which is replaced by this message. (NL: MessageId van het oorspronkelijke bericht, dat wordt vervangen door dit bericht.)",
@@ -142,7 +142,7 @@
           "description": "Governmental identification number for legal entities and associations. (AFD 2.0 only)",
           "customDescription": "Governmental identification number for legal entities and associations (RSIN)",
           "type": "string",
-          "maxLength": 8
+          "maxLength": 9
         }
       },
       "required": [
@@ -182,7 +182,7 @@
           "description": "Governmental identification number for legal entities and associations. (AFD 2.0 only)",
           "customDescription": "Governmental identification number for legal entities and associations (RSIN)",
           "type": "string",
-          "maxLength": 8
+          "maxLength": 9
         },
         "party": {
           "type": "array",
@@ -296,7 +296,7 @@
           "description": "Governmental identification number for legal entities and associations. (AFD 2.0 only)",
           "customDescription": "Governmental identification number for legal entities and associations (RSIN)",
           "type": "string",
-          "maxLength": 8
+          "maxLength": 9
         },
         "puvCode": {
           "description": "Pension provider (NL: Pensioenuitvoerder)",
@@ -612,3 +612,6 @@
     "party"
   ]
 }
+
+
+
