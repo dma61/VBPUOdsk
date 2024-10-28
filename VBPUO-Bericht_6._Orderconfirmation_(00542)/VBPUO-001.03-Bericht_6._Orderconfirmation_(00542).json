@@ -2,8 +2,8 @@
   "$schema": "http://json-schema.org/draft/2019-09/schema#",
   "description": "JSON Schema SIVI 2.0",
   "//comment": {
-    "functionDescription": "Bericht_6._Ordersettlement_(00542)",
-    "afdDefinitionChangeLog": "20240808 0907 uitlevering (AOS 001.02) - juli"
+    "functionDescription": "Bericht_6._Orderconfirmation_(00542)",
+    "afdDefinitionChangeLog": "#### uitlevering (AOS 001.03) - commit(s) - issue #41"
   },
   "definitions": {
     "commonFunctional": {
@@ -15,19 +15,19 @@
           "type": "string",
           "const": "default"
         },
-         "afdDefinitionName": {
+        "afdDefinitionName": {
           "description": "Name of the AFD-definition. (NL: De AFD definitienaam van o.a. webservices en verzekeringsproducten.)",
           "customDescription": "Soort bericht",
           "type": "string",
           "maxLength": 80,
-          "const": "VBPUO-001.00-Bericht_6._Ordersettlement_(00542)"
+          "const": "VBPUO-001.00-Bericht_6._Orderconfirmation_(00542)"
         },
         "afdDefinitionVersion": {
           "description": "Version of the AFD-definition. (NL: Met AFD definitieversienummer wordt aangegeven over welke versie van de (product)definitie wordt gecommuniceerd.)",
           "customDescription": "Versie van het JSON schema",
           "type": "string",
           "maxLength": 80,
-          "const": "001.02"
+          "const": "001.03 (issue #41)"
         },
         "originalMessageId": {
           "description": "The messageId of the original message, which is replaced by this message. (NL: MessageId van het oorspronkelijke bericht, dat wordt vervangen door dit bericht.)",
@@ -301,7 +301,7 @@
         "puvCode": {
           "description": "Pension provider (NL: Pensioenuitvoerder)",
           "codelistName": "AFDIDP",
-          "$ref": "VBPUO-001.00-Bericht_6._Ordersettlement_(00542)-afdCodelists.json#/definitions/AFDIDP",
+          "$ref": "https://www.sivi.org/afd-online-tool/json/AFDIDP.json#/definitions/AFDIDP",
           "type": "string"
         },
         "pension": {
@@ -442,6 +442,11 @@
           "codelistName": "ISOVAL",
           "$ref": "https://www.sivi.org/afd-online-tool/json/ISOVAL.json#/definitions/ISOVAL",
           "type": "string"
+        },
+        "numberOfUnits": {
+          "description": "Number of units. (NL: Aantal units/eenheden.)",
+          "customDescription": "Aantal units per instrument per regeling per beleggingsportefeuille",
+          "type": "integer"
         },
         "financialTransaction": {
           "type": "array",
@@ -634,6 +639,3 @@
     "party"
   ]
 }
-
-
-
