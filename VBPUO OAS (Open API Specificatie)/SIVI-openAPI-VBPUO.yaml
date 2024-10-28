@@ -10,7 +10,7 @@ info:
     - A response by the server with http code 202 indicates the client that the request is processed asynchronously, expecting the client to receive the processing result on their /feedback endpoint
     - Parties have to agree whether to support an asynchronous feedback message.\n
     "
-  version: 1.0.8
+  version: 1.0.9
   contact:
     name: SIVI API Support & Issues
     url: https://github.com/dma61/VBPUOdsk/issues
@@ -28,7 +28,7 @@ tags:
   - name: PensionProjection (SPR)
   - name: ReturnOnInvestment (SPR)
   - name: Trade (FPR)
-  - name: OrderSettlement (FPR)
+  - name: OrderConfirmation (FPR)
   - name: BalanceAdjustments (FPR)
   - name: InvestmentDetails (FPR)
   - name: InvestmentDetailsPUO (FPR)
@@ -217,13 +217,13 @@ paths:
     post:
       summary: Endpoint for delivery of Order Settlement information. Flows from broker to PUO.
       tags:
-        - OrderSettlement (FPR)
+        - OrderConfirmation (FPR)
       security:
         - OneWelcomeOAuth2:
-          - https://sivi-vermogensbeheerkoppeling/orderSettlement.write
+          - https://sivi-vermogensbeheerkoppeling/orderConfirmation.write
       description: >-
         verhaal
-      operationId: newOrderSettlement
+      operationId: newOrderConfirmation
       parameters:
         - $ref: "#/components/parameters/puvCode"
         - $ref: "#/components/parameters/xJwsSignature"
@@ -232,7 +232,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/OrderSettlement"
+              $ref: "#/components/schemas/OrderConfirmation"
       responses:
         '200':
           description: 'Request succesfully received and processed (synchronously)'
@@ -574,8 +574,8 @@ components:
       $ref: 'VBPUO-Bericht_4._Rendementsinformatie_(00002)/VBPUO-001.00-Bericht_4._Rendementsinformatie_(00002).json'
     Trade:
       $ref: 'VBPUO-Bericht_5._Orderopdracht_(00541)/VBPUO-001.00-Bericht_5._Orderopdracht_(00541).json'
-    OrderSettlement:
-      $ref: 'VBPUO-Bericht_6._Ordersettlement_(00542)/VBPUO-001.00-Bericht_6._Ordersettlement_(00542).json'
+    OrderConfirmation:
+      $ref: 'VBPUO-Bericht_6._Orderconfirmation_(00542)/VBPUO-001.03-Bericht_6._Orderconfirmation_(00542).json'
     BalanceAdjustments:
       $ref: 'VBPUO-Bericht_7._Mutatiesaldi_(00551)/VBPUO-001.00-Bericht_7._Mutatiesaldi_(00551).json'
     InvestmentDetails:
@@ -640,7 +640,7 @@ components:
             https://sivi-vermogensbeheerkoppeling/controlInformationInvestmentPools.write: Write controlInformationInvestmentPools information
             https://sivi-vermogensbeheerkoppeling/rebalancingDetails.write: Write rebalancingDetails information
             https://sivi-vermogensbeheerkoppeling/valueAmountCohortPool.write: Write valueAmountCohortPool information
-            https://sivi-vermogensbeheerkoppeling/valueAmountInvestmentPool.write: Write orderSettlement information
+            https://sivi-vermogensbeheerkoppeling/valueAmountInvestmentPool.write: Write orderConfirmation information
             https://sivi-vermogensbeheerkoppeling/paymentDetailsCreditor.write: Write paymentDetailsCreditor information
             https://sivi-vermogensbeheerkoppeling/feedback.write: Write processingReport information
   links: {}
