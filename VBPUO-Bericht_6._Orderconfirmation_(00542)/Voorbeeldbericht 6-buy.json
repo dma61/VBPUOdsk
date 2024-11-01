@@ -3,7 +3,6 @@
     {
       "entityType": "default",
       "function": "02",
-      "resending": false,
       "afdDefinitionName": "VBPUO-001.00-Bericht_6._Orderconfirmation_(00542)",
       "afdDefinitionVersion": "001.03 (issue #41)",
       "originalMessageId": "20240529 1532"
@@ -13,8 +12,8 @@
     {
       "entityType": "default",
       "messageId": "67891",
-      "creationDateTime": "20240104T120000",
-      "messageVersion": "1",
+      "creationDateTime": "2023-10-28T10:00:00Z",
+      
       "testMessage": false,
       "party": [
         {
@@ -37,7 +36,7 @@
   "party": [
     {
       "entityType": "pensionProvider",
-      "refKey": "pensProv002",
+      "puvCode": "U0003",
       "rsinNumber": "112233449",
       "organizationName": "Pension Provider YZ",
       "pension": [
@@ -49,8 +48,8 @@
           "financialInformation": [
             {
               "entityType": "reportingPeriod",
-              "investmentOrderSettlementDate": "20240104",
-              "instructionDate": "20240102"
+              "investmentOrderSettlementDate": "2024-01-04",
+              "instructionDate": "2024-01-02"
             }
           ],
           "investment": [
@@ -65,7 +64,7 @@
                   "refKey": "trade123",
                   "adjustmentIndicator": false,
                   "buySellId": "buy",
-                  "tradeDate": "20240104",
+                  
                   "tradeAmount": 10000.00,
                   "tradeQuantity": 102,
                   "tradePrice": 98.04, 
@@ -83,6 +82,9 @@
       ]
     }
   ],
-  "document": [],
-  "error": []
+  "document": []
+  
 }
+
+
+

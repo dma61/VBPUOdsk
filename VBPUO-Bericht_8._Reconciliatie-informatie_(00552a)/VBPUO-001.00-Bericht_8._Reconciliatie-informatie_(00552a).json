@@ -3,7 +3,7 @@
   "description": "JSON Schema SIVI 2.0",
   "//comment": {
     "functionDescription": "Bericht_8._Reconciliatie-informatie_(00552a)",
-    "afdDefinitionChangeLog": "20240808 0907 uitlevering (AOS 001.02) - juli"
+    "afdDefinitionChangeLog": "#### uitlevering (AOS 001.03) - commit(s) - issue #60 & 68"
   },
   "definitions": {
     "commonFunctional": {
@@ -19,21 +19,20 @@
           "description": "Name of the AFD-definition. (NL: De AFD definitienaam van o.a. webservices en verzekeringsproducten.)",
           "customDescription": "Soort bericht",
           "type": "string",
-          "maxLength": 80,
-          "const": "VBPUO-001.00-Bericht_8._Reconciliatie-informatie_(00552a)"
+          "maxLength": 80
         },
         "afdDefinitionVersion": {
           "description": "Version of the AFD-definition. (NL: Met AFD definitieversienummer wordt aangegeven over welke versie van de (product)definitie wordt gecommuniceerd.)",
           "customDescription": "Versie van het JSON schema",
           "type": "string",
           "maxLength": 80,
-          "const": "001.02"
+          "const": "001.03 (issue #60 & 68)"
         },
         "originalMessageId": {
           "description": "The messageId of the original message, which is replaced by this message. (NL: MessageId van het oorspronkelijke bericht, dat wordt vervangen door dit bericht.)",
           "customDescription": "Het oorspronkelijke messageId van het bericht dat wordt vervangen door dit bericht",
           "type": "string",
-          "maxLength": 22
+          "maxLength": 70
         },
         "function": {
           "description": "Message function (NL: Berichtfunctie)",
@@ -301,7 +300,7 @@
         "puvCode": {
           "description": "Pension provider (NL: Pensioenuitvoerder)",
           "codelistName": "AFDIDP",
-          "$ref": "VBPUO-001.00-Bericht_8._Reconciliatie-informatie_(00552a)-afdCodelists.json#/definitions/AFDIDP",
+          "$ref": "https://www.sivi.org/afd-online-tool/json/AFDIDP.json#/definitions/AFDIDP",
           "type": "string"
         },
         "pension": {
@@ -606,6 +605,4 @@
     "party"
   ]
 }
-
-
 

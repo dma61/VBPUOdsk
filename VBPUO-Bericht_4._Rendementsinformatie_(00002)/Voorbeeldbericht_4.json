@@ -28,7 +28,7 @@
 			"entityType": "default",
 			"function": "54",
 			"afdDefinitionName": "VBPUO-001.00-Bericht_4._Rendementsinformatie_(00002)",
-			"afdDefinitionVersion": "001.02",
+			"afdDefinitionVersion": "001.03 (issue #60 & 68)",
 			"originalMessageId": "98765432109876543210"
 		}
 	],
@@ -95,3 +95,5 @@
 		}
 	]
 }
+
+

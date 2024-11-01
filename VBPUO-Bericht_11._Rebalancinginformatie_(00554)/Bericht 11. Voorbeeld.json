@@ -2,10 +2,9 @@
   "commonFunctional": [
     {
       "entityType": "default",
-      "resending": false,
       "originalMessageId": "msg12345",
       "afdDefinitionName": "VBPUO-001.00-Bericht_11._Rebalancinginformatie_(00554)",
-      "afdDefinitionVersion": "001.02",
+      "afdDefinitionVersion": "001.03 (issue #60 & 68)",
       "function": "54"
     }
   ],
@@ -14,7 +13,6 @@
       "entityType": "default",
       "messageId": "msg12345",
       "creationDateTime": "2023-12-18T10:00:00",
-      "messageVersion": "114", 
       "testMessage": false,
       "party": [
         {
@@ -25,14 +23,16 @@
           "applicationSenderName": "PensionApp",
           "party": [
             {
-              "entityType": "contact"
+              "entityType": "contact",
+              "workPhoneNumber": "+31123456789",
+              "emailWork": "contact@pensionfundxyz.com"
             }
           ]
         },
         {
           "entityType": "receiver",
-          "refKey": "def456",
           "rsinNumber": "987654321",
+          "refKey": "def456",
           "organizationName": "InvestmentCompanyABC"
         }
       ]
@@ -41,7 +41,7 @@
   "party": [
     {
       "entityType": "pensionProvider",
-      "refKey": "ghi789",
+      "puvCode": "U0009",
       "organizationName": "PensionProviderXYZ",
       "rsinNumber": "123987459",
       "pension": [
@@ -60,17 +60,19 @@
             {
               "entityType": "cohortPool",
               "refKey": "cohort2023",
+              "description": "Cohort pool for 2023 investments",
               "currencyType": "EUR",
+              "cohortRef": "cohort2023scheme",
               "investment": [
                 {
                   "entityType": "pool",
                   "refKey": "invest001",
+                  "description": "Equity Investment Pool",
                   "dummyCashId": "DUMMY123",
-                  "buySellId": "BUY",
+                  "buySellId": "buy",
                   "tradeQuantity": 1000,
                   "unitPrice": 10.00,
                   "currencyExchangeRate": 1.00,
-                  "tradeValueAmount": 10000.00,
                   "currencyType": "EUR"
                 }
               ]
@@ -80,6 +82,5 @@
       ]
     }
   ],
-  "error": [],
   "document": []
 }

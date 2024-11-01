@@ -1,10 +1,11 @@
 {
   "commonFunctional": {
     "productName": "VBPUO",
-    "definitionVersion": "001.00",
-    "startDate": "20240801",
+    "definitionVersion": "001.03",
+    "startDate": "20241024",
     "functionDescription": "Bericht_12._Waarde-informatie_cohortenpool_(00555a)",
-    "afdDefinitionChangeLog": "20240808 0907 uitlevering (AOS 001.02) - juli"
+    "tag": "VBPUO",
+    "afdDefinitionChangeLog": "#### uitlevering (AOS 001.03) - commit(s) - issue #60 & 68"
   },
   "rule": [
     {
@@ -13,3 +14,4 @@
     }
   ]
 }
+
