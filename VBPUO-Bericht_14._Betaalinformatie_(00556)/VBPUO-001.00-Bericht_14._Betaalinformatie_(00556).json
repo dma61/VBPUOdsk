@@ -3,7 +3,7 @@
   "description": "JSON Schema SIVI 2.0",
   "//comment": {
     "functionDescription": "Bericht_14._Betaalinformatie_(00556)",
-    "afdDefinitionChangeLog": "#### uitlevering (AOS 001.03) - commit(s) - issue #60 & 68"
+    "afdDefinitionChangeLog": "20241127 0049 uitlevering (AOS 001.03) - november"
   },
   "definitions": {
     "commonFunctional": {
@@ -19,14 +19,15 @@
           "description": "Name of the AFD-definition. (NL: De AFD definitienaam van o.a. webservices en verzekeringsproducten.)",
           "customDescription": "Soort bericht",
           "type": "string",
-          "maxLength": 80
+          "maxLength": 80,
+          "const": "VBPUO-001.00-Bericht_14._Betaalinformatie_(00556)"
         },
         "afdDefinitionVersion": {
           "description": "Version of the AFD-definition. (NL: Met AFD definitieversienummer wordt aangegeven over welke versie van de (product)definitie wordt gecommuniceerd.)",
           "customDescription": "Versie van het JSON schema",
           "type": "string",
           "maxLength": 80,
-          "const": "001.03 (issue #60 & 68)"
+          "const": "001.03"
         },
         "originalMessageId": {
           "description": "The messageId of the original message, which is replaced by this message. (NL: MessageId van het oorspronkelijke bericht, dat wordt vervangen door dit bericht.)",

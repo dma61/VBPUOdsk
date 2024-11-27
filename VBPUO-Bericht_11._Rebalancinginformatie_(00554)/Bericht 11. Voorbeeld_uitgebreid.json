@@ -4,7 +4,7 @@
       "entityType": "default",
       "originalMessageId": "msg12345",
       "afdDefinitionName": "VBPUO-001.00-Bericht_11._Rebalancinginformatie_(00554)",
-      "afdDefinitionVersion": "001.03 (issue #60 & 68)",
+      "afdDefinitionVersion": "001.03",
       "function": "54"
     }
   ],
@@ -122,4 +122,5 @@
     }
   ]
 }
+
 

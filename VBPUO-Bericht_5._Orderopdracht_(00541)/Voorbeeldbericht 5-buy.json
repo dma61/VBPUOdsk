@@ -5,7 +5,7 @@
       "function": "01",
       "resending": false,
       "afdDefinitionName": "VBPUO-001.00-Bericht_5._Orderopdracht_(00541)",
-      "afdDefinitionVersion": "001.02",
+      "afdDefinitionVersion": "001.03",
       "originalMessageId": "20240529 1532"
     }
   ],
@@ -76,3 +76,4 @@
   "document": [],
   "error": []
 }
+

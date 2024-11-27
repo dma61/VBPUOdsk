@@ -3,7 +3,7 @@
   "description": "JSON Schema SIVI 2.0",
   "//comment": {
     "functionDescription": "Bericht_4._Rendementsinformatie_(00002)",
-    "afdDefinitionChangeLog": "#### uitlevering (AOS 001.03) - commit(s) - issue #60 & 68"
+    "afdDefinitionChangeLog": "20241127 0049 uitlevering (AOS 001.03) - november"
   },
   "definitions": {
     "commonFunctional": {
@@ -19,14 +19,15 @@
           "description": "Name of the AFD-definition. (NL: De AFD definitienaam van o.a. webservices en verzekeringsproducten.)",
           "customDescription": "Soort bericht",
           "type": "string",
-          "maxLength": 80
+          "maxLength": 80,
+          "const": "VBPUO-001.00-Bericht_4._Rendementsinformatie_(00002)"
         },
         "afdDefinitionVersion": {
           "description": "Version of the AFD-definition. (NL: Met AFD definitieversienummer wordt aangegeven over welke versie van de (product)definitie wordt gecommuniceerd.)",
           "customDescription": "Versie van het JSON schema",
           "type": "string",
           "maxLength": 80,
-          "const": "001.03 (issue #60 & 68)"
+          "const": "001.03"
         },
         "originalMessageId": {
           "description": "The messageId of the original message, which is replaced by this message. (NL: MessageId van het oorspronkelijke bericht, dat wordt vervangen door dit bericht.)",
@@ -464,7 +465,7 @@
           "description": "The return achieved over a period as a percentage. (NL: Het behaalde rendement als percentage, over een periode.)",
           "customDescription": "Het behaalde rendement in percentage over gegevensperiode per regeling en per beleggingsportefeuille",
           "type": "number",
-          "multipleOf": 0.01
+          "multipleOf": 1E-12
         },
         "returnAmount": {
           "description": "Amount of return achieved over a period. (NL: Het behaalde rendement over een periode.)",
@@ -513,7 +514,7 @@
           "description": "The excess return achieved in percentage over the data period per pension scheme and per cohort. (NL: Het behaalde overrendement in percentage over gegevensperiode per regeling en per cohort.)",
           "customDescription": "Het behaalde overrendement in percentage over gegevensperiode per regeling en per cohort ",
           "type": "number",
-          "multipleOf": 0.01
+          "multipleOf": 1E-12
         },
         "protectionReturnAmount": {
           "description": "The protection return achieved in the pension scheme currency over the data period per pension scheme and per cohort. (NL: Het behaalde beschermingsrendement in valuta van de regeling over gegevensperiode per pensioenregeling en per cohort.)",
@@ -525,7 +526,7 @@
           "description": "The protection return achieved in percentage over the data period per pension scheme and per cohort. (NL: Het behaalde beschermingsrendement in percentage over een gegevensperiode per pensioenregeling en per cohort.)",
           "customDescription": "Het behaalde beschermingsrendement in percentage over gegevensperiode per regeling en per cohort",
           "type": "number",
-          "multipleOf": 0.01
+          "multipleOf": 1E-12
         },
         "reserveIndicator": {
           "description": "Indication whether a reserve is available / applies. (NL: Indicatie of een reserve aanwezig is / van toepassing is.)",
@@ -561,8 +562,27 @@
           "description": "Participation type (NL: Deelname status)",
           "customDescription": "Status van de deelnemers in een cohort",
           "codelistName": "ADNDNS",
-          "$ref": "https://www.sivi.org/afd-online-tool/json/ADNDNS.json#/definitions/ADNDNS",
-          "type": "string"
+          "type": "string",
+          "oneOf": [
+            {
+              "const": "16"
+            },
+            {
+              "const": "20"
+            },
+            {
+              "const": "35"
+            },
+            {
+              "const": "40"
+            },
+            {
+              "const": "80"
+            },
+            {
+              "const": "60"
+            }
+          ]
         },
         "reserveDescription": {
           "description": "Description of the reserve. (NL: Omschrijving van het reserve.)",

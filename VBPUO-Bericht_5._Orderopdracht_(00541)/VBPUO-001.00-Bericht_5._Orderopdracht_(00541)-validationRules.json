@@ -1,10 +1,11 @@
 {
   "commonFunctional": {
     "productName": "VBPUO",
-    "definitionVersion": "001.00",
-    "startDate": "20240801",
+    "definitionVersion": "001.03",
+    "startDate": "20250101",
     "functionDescription": "Bericht_5._Orderopdracht_(00541)",
-    "afdDefinitionChangeLog": "20240808 0907 uitlevering (AOS 001.02) - juli"
+    "tag": "VBPUO",
+    "afdDefinitionChangeLog": "20241127 0049 uitlevering (AOS 001.03) - november"
   },
   "rule": [
     {
@@ -13,3 +14,4 @@
     }
   ]
 }
+
