@@ -1,0 +1,201 @@
+@startuml
+hide methods
+hide party
+set separator none
+
+skinparam {
+    DefaultFontName "Courier"
+    LegendFontName "Courier"
+    ClassBackgroundColor White
+    ClassBorderColor Black
+    ClassFontColor Black
+    ArrowColor Black
+    ArrowFontColor Black
+}
+
+legend top left
+<b>LEGEND</b>
+
+1. <b>Bold</b> = Mandatory fields
+2. <i>Italic</i> = Optional fields
+3. ..       = incomplete list (complete values on afdCodelists)
+
+For description of codes ADNFUN, ADNDNS, AFDIDP, AFDRES a.s.o. see
+https://www.sivi.org/sivi-afs/online-diensten/afd-2-0-online-raadplegen/
+
+end legend
+
+' Common elements
+
+class document {
+    {static} **entityType : string = "default"**
+    {field} **refKey : string(70)**
+    {field} **fileName : string(60)**
+    {field} **fileExtension**
+	
+}
+
+enum ext {
+    pdf
+    csv
+	txt
+    
+}
+
+ext -u- document
+
+class commonTechnical {
+    {static} **entityType : string = "default"**
+    **creationDateTime : datetime**
+    {field} **messageId : string(70)**
+    testMessage : boolean
+}
+
+class commonFunctional {
+    {static} **entityType : string = "default"**
+    {field} **afdDefinitionName : string(80)**
+    {field} **afdDefinitionVersion : string(80)**
+    {field} originalMessageId : string(70)
+    **function : ADNFUN**
+}
+
+enum ADNFUN {
+    01 : Nieuw
+    02 : Wijzigen
+    09 : Ter informatie
+    {field} 54 : Herzenden (inhoud niet aangepast, geen correctie)
+}
+commonFunctional -- ADNFUN : function
+
+' Party elements
+abstract class party {
+}
+
+class party.sender extends party {
+    {static} **entityType : string = "sender"**
+    {field} **refKey : string(70)**
+    {field} **organizationName : string(60)**
+    {field} <i>applicationSenderName : string(60)</i>
+    {field} <i>rsinNumber : string(9)</i>
+}
+
+class party.receiver extends party {
+    {static} **entityType : string = "receiver"**
+    {field} **refKey : string(70)**
+    {field} **organizationName : string(60)**
+    {field} <i>rsinNumber : string(9)</i>
+}
+
+class party.pensionProvider extends party {
+    {static} **entityType: string = "pensionProvider"**
+    {field} **refKey : string(70)**
+    {field} **organizationName : string(60)**
+    **puvCode**: AFDIDP
+    {field} <i>rsinNumber : string(9)</i>
+}
+
+class party.contact {
+    {static} **entityType : string = "contact"**
+    {field} **workPhoneNumber : string(60)**
+    {field} **emailWork : string(60)**
+}
+
+enum AFDIDP {
+    U0003 : ....
+    U0005 : ....
+    ..
+    U0765 : ....
+}
+
+party.pensionProvider -- AFDIDP : puvCode
+party.sender "1" o-- "0..9" party.contact
+
+' Berichtstructuur
+class Berichtstructuur {
+}
+
+Berichtstructuur o-- commonTechnical : "1..1"
+commonTechnical o-- party.sender : "1..1"
+commonTechnical o-- party.receiver : "1..1"
+
+Berichtstructuur o-- commonFunctional : "1..1"
+
+Berichtstructuur o-- party.pensionProvider : "1..1"
+party.pensionProvider "1" o-- "1..999" pension.scheme
+
+pension.scheme "1" o-- "1..1" financialInformation.reportingPeriod
+pension.scheme "1" o-- "1..99999" financialTransaction.payment
+pension.scheme "1" o-- "0..99999" pension.cohort
+
+pension.cohort "1" o-- "1..9999" financialTransaction.payment_1
+pension.cohort -- ADNDNS : reserveType
+pension.cohort -- AFDRES : participationStatus
+
+Berichtstructuur o-- document : "0..999"
+
+' Pension pension.scheme relationships
+class pension.scheme {
+    **entityType**: string = pension.scheme <<constant>>
+    **refKey**: string <max. 70 pos>
+    **pensionpension.schemeName**: string <max. 60 pos>
+    **financialInformation**: List[financialInformation.reportingPeriod]
+    **financialTransaction**: List[financialTransaction.payment]
+    **pension**: List[pension.cohort]
+}
+
+class financialInformation.reportingPeriod {
+    **entityType**: string = financialInformation.reportingPeriod <<constant>>
+    **projectionDate**: date
+}
+
+class pension.cohort {
+    **entityType**: string = cohort <<constant>>
+    **refKey**: string <max. 70 pos>
+    **startAmount**: number
+    **description**: string <max. 60 pos>
+    **reserveIndicator**: boolean
+    <i>reserveType</i>: ADNDNS
+    <i>startAge</i>: number
+    <i>endAge</i>: number
+    <i>participationStatus</i>: AFDRES
+    <i>reserveDescription</i>: string <max. 60 pos>
+}
+
+class financialTransaction.payment {
+    **entityType**: string = payment <<constant>>
+    **refKey**: string <max. 70 pos>
+    **expectedPensionPaymentDate**: date
+    **Amount**: number
+    **hedgedExpectedPensionPaymentAmount**: number
+}
+
+class financialTransaction.payment_1 {
+    **entityType**: string = payment <<constant>>
+    **refKey**: string <max. 70 pos>
+    **expectedPensionPaymentDate**: date
+    **Amount**: number
+    <i>hedgedExpectedPensionPaymentAmount</i>: number
+}
+
+enum ADNDNS {
+    01 : Solidariteitsreserve
+    02 : Minimaal vereist eigen vermogen (MVEV)
+    ..
+    04 : Compensatiedepot
+}
+
+enum AFDRES {
+    1 : Solidariteitsreserve
+    2 : Minimaal vereist eigen vermogen (MVEV)
+    ..
+    3 : Operationele reserve
+    99 : Overige
+}
+
+note right of financialTransaction.payment_1
+The amounts of financialTransaction.payment under pension.pension.scheme 
+are either directly provided or aggregated from the amounts of 
+financialTransaction.payment under pension.cohort.
+end note
+
+@enduml
