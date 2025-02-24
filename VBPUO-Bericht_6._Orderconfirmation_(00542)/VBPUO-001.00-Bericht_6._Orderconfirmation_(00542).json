@@ -3,7 +3,7 @@
   "description": "JSON Schema SIVI 2.0",
   "//comment": {
     "functionDescription": "Bericht_6._Orderconfirmation_(00542)",
-    "afdDefinitionChangeLog": "20241127 0049 uitlevering (AOS 001.03) - november"
+    "afdDefinitionChangeLog": "#### uitlevering (AOS 001.04) - commit(s) - issue #77"
   },
   "definitions": {
     "commonFunctional": {
@@ -27,7 +27,7 @@
           "customDescription": "Versie van het JSON schema",
           "type": "string",
           "maxLength": 80,
-          "const": "001.03"
+          "const": "001.04"
         },
         "originalMessageId": {
           "description": "The messageId of the original message, which is replaced by this message. (NL: MessageId van het oorspronkelijke bericht, dat wordt vervangen door dit bericht.)",
@@ -485,6 +485,12 @@
           "type": "string",
           "maxLength": 70
         },
+        "tradeDate": {
+          "description": "Desired trade date. (NL: Gewenste handelsdatum.)",
+          "customDescription": "Handelsdatum (gewenst of feitelijk)",
+          "type": "string",
+          "format": "date"
+        },
         "tradeQuantity": {
           "description": "Number of trade units. (NL: Aantal eenheden van de transactie.)",
           "customDescription": "Aantal te verhandelen stukken (units) van de transactie",
@@ -639,4 +645,3 @@
     "party"
   ]
 }
-
