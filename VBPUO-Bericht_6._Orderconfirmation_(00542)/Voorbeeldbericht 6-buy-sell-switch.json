@@ -3,9 +3,8 @@
     {
       "entityType": "default",
       "function": "02",
-           
       "afdDefinitionName": "VBPUO-001.00-Bericht_6._Orderconfirmation_(00542)",
-      "afdDefinitionVersion": "#### uitlevering (AOS 001.04) - commit(s) - issue #77",  
+      "afdDefinitionVersion": "001.04",
       "originalMessageId": "20240529 1532"
     }
   ],
@@ -63,7 +62,6 @@
                   "refKey": "trade123",
                   "adjustmentIndicator": false,
                   "buySellId": "buy",
-                 
                   "tradeAmount": 10000.00,
                   "tradeQuantity": 100,
                   "tradePrice": 100.00,
@@ -79,7 +77,7 @@
                   "refKey": "trade124",
                   "adjustmentIndicator": false,
                   "buySellId": "sell",
-                  "tradeDate": "20240104",
+                  "tradeDate": "2024-01-04",
                   "tradeAmount": 5000.00,
                   "tradeQuantity": 50,
                   "tradePrice": 100.00,
@@ -102,8 +100,8 @@
           "financialInformation": [
             {
               "entityType": "reportingPeriod",
-              "investmentOrderSettlementDate": "20240107",
-              "instructionDate": "20240105"
+              "investmentOrderSettlementDate": "2024-01-07",
+              "instructionDate": "2024-01-05"
             }
           ],
           "investment": [
@@ -118,7 +116,7 @@
                   "refKey": "trade125",
                   "adjustmentIndicator": false,
                   "buySellId": "switch",
-                  "tradeDate": "20240106",
+                  "tradeDate": "2024-01-06",
                   "tradeAmount": -2000.00,
                   "tradeQuantity": -20,
                   "tradePrice": 100.00,
@@ -144,7 +142,7 @@
                   "refKey": "trade126",
                   "adjustmentIndicator": false,
                   "buySellId": "switch",
-                  "tradeDate": "20240106",
+                  "tradeDate": "2024-01-06",
                   "tradeAmount": 2000.00,
                   "tradeQuantity": 50,
                   "tradePrice": 40.00,
@@ -164,9 +162,5 @@
       ]
     }
   ],
-  "document": [] 
+  "document": []
 }
-
-
-
-
