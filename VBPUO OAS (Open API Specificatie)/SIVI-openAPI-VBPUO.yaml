@@ -10,7 +10,7 @@ info:
     - A response by the server with http code 202 indicates the client that the request is processed asynchronously, expecting the client to receive the processing result on their /feedback endpoint
     - Parties have to agree whether to support an asynchronous feedback message.\n
     "
-  version: 1.0.9
+  version: 1.0.10
   contact:
     name: SIVI API Support & Issues
     url: https://github.com/dma61/VBPUOdsk/issues
@@ -615,7 +615,6 @@ components:
       in: header
       name: x-jws-signature
       description: "Detached JWS signature of the body of the payload."
-      required: true
       schema:
         type: string
   securitySchemes:
