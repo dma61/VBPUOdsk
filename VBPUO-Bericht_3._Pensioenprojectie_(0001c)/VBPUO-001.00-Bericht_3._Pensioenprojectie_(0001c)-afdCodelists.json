@@ -1039,7 +1039,7 @@
           "const": "1"
         },
         {
-          "description": "Minimaal vereist eigen vermogen (MVEV)",
+          "description": "Eigen vermogen",
           "const": "2"
         },
         {
@@ -1051,6 +1051,22 @@
           "const": "4"
         },
         {
+          "description": "Voorziening toekomstige kosten",
+          "const": "5"
+        },
+        {
+          "description": "Incurred But Not Reported (IBNR)",
+          "const": "6"
+        },
+        {
+          "description": "Voorziening wezenpensioen eerbiedigd",
+          "const": "7"
+        },
+        {
+          "description": "Voorziening premievrijstelling",
+          "const": "8"
+        },
+        {
           "description": "Overige",
           "const": "99"
         }
@@ -1058,4 +1074,3 @@
     }
   }
 }
-

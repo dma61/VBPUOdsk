@@ -1,0 +1,154 @@
+@startuml
+hide methods
+set separator none
+
+legend top left
+<size:20><b>LEGEND: </b> <color:red><b>0001c</b></color></size>
+1. <b>Bold</b> = Mandatory fields
+2. <i>Italic</i> = Optional fields
+3. ..       = incomplete list (complete values on afdCodelists)
+end legend
+
+class berichtstructuur {}
+
+class commonTechnical.default {
+    {static} **entityType : string = "default"**
+    {field} <i>messageId : string(70)</i>
+    {field} <i>creationDateTime : timestamp</i>
+    {field} **testMessage : boolean**
+}
+
+class party.sender {
+    {static} **entityType : string = "sender"**
+    {field} <i>refKey : string(70)</i>
+    {field} **rsinNumber : string(9)**
+    {field} <i>organizationName : string(60)</i>
+    {field} **applicationSenderName : string(60)**
+}
+
+class party.contact {
+    {static} **entityType : string = "contact"**
+    {field} <i>emailWork : string(60)</i>
+    {field} <i>workPhoneNumber : string(60)</i>
+}
+
+class party.receiver {
+    {static} **entityType : string = "receiver"**
+    {field} <i>refKey : string(70)</i>
+    {field} **rsinNumber : string(9)**
+    {field} <i>organizationName : string(60)</i>
+}
+
+class commonFunctional.default {
+    {static} **entityType : string = "default"**
+    {field} <i>function : string</i>
+    {field} <i>afdDefinitionName : string(80)</i>
+    {field} <i>afdDefinitionVersion : string(80)</i>
+    {field} **originalMessageId : string(70)**
+}
+
+class party.pensionProvider {
+    {static} **entityType : string = "pensionProvider"**
+    {field} <i>puvCode : string</i>
+    {field} **rsinNumber : string(9)**
+    {field} <i>organizationName : string(60)</i>
+}
+
+class pension.scheme {
+    {static} **entityType : string = "scheme"**
+    {field} <i>refKey : string(70)</i>
+    {field} <i>pensionSchemeName : string(60)</i>
+}
+
+class financialInformation.reportingPeriod {
+    {static} **entityType : string = "reportingPeriod"**
+    {field} <i>projectionDate : date</i>
+}
+
+class financialTransaction.payment {
+    {static} **entityType : string = "payment"**
+    {field} <i>refKey : string(70)</i>
+    {field} <i>expectedPensionPaymentDate : date</i>
+    {field} <i>amount : decimal</i>
+    {field} <i>hedgedExpectedPensionPaymentAmount : decimal</i>
+}
+
+class pension.cohort {
+    {static} **entityType : string = "cohort"**
+    {field} <i>refKey : string(70)</i>
+    {field} <i>description : string(60)</i>
+    {field} **participationStatus : string**
+    {field} **startAge : integer**
+    {field} **endAge : integer**
+    {field} <i>reserveIndicator : boolean</i>
+    {field} **reserveType : string**
+    {field} **reserveDescription : string(60)**
+}
+
+class financialTransaction.payment_1 {
+    {static} **entityType : string = "payment"**
+    {field} <i>refKey : string(70)</i>
+    {field} <i>expectedPensionPaymentDate : date</i>
+    {field} <i>amount : decimal</i>
+    {field} **hedgedExpectedPensionPaymentAmount : decimal**
+}
+
+class document.default {
+    {static} **entityType : string = "default"**
+    {field} <i>refKey : string(70)</i>
+    {field} <i>fileName : string(60)</i>
+    {field} <i>fileExtension : string</i>
+}
+
+enum ADNDNS {
+    AO aspirant actief
+    AO aspirant niet actief
+    Actief
+    ..
+}
+
+enum ADNFUN {
+    Nieuw
+    Wijzigen
+    Aanmelden bestaande polis op pakket
+    ..
+}
+
+enum AFDIDP {
+    St. Pf. Openbare Bibliotheken
+    AEGON Levensverzekering N.V.
+    Pensioenfonds voor de Accountancy
+    ..
+}
+
+enum AFDRES {
+    Solidariteitsreserve
+    Minimaal vereist eigen vermogen (MVEV)
+    Operationele reserve
+    ..
+}
+
+enum cdl_241 {
+    pdf
+    csv
+    txt
+}
+
+berichtstructuur o-- "1..1" commonFunctional.default
+berichtstructuur o-- "1..1" commonTechnical.default
+berichtstructuur o-- "0..99" document.default
+berichtstructuur o-- "1..1" party.pensionProvider
+commonTechnical.default o-- "1..1" party.receiver
+commonTechnical.default o-- "1..1" party.sender
+party.pensionProvider o-- "1..999" pension.scheme
+party.sender o-- "0..9" party.contact
+pension.cohort o-- "0..9999" financialTransaction.payment_1
+pension.scheme o-- "1..1" financialInformation.reportingPeriod
+pension.scheme o-- "1..99999" financialTransaction.payment
+pension.scheme o-- "0..99999" pension.cohort
+commonFunctional.default o-- "function" ADNFUN
+document.default o-- "fileExtension" cdl_241
+party.pensionProvider o-- "puvCode" AFDIDP
+pension.cohort o-- "participationStatus" ADNDNS
+pension.cohort o-- "reserveType" AFDRES
+@enduml

@@ -3,7 +3,7 @@
   "description": "JSON Schema SIVI 2.0",
   "//comment": {
     "functionDescription": "Bericht_3._Pensioenprojectie_(0001c)",
-    "afdDefinitionChangeLog": "20241127 0049 uitlevering (AOS 001.03) - november"
+    "afdDefinitionChangeLog": "2026mmdd mmss uitlevering (AOS 001.04) - prerelease 2026 (juni)"
   },
   "definitions": {
     "commonFunctional": {
@@ -19,15 +19,13 @@
           "description": "Name of the AFD-definition. (NL: De AFD definitienaam van o.a. webservices en verzekeringsproducten.)",
           "customDescription": "Soort bericht",
           "type": "string",
-          "maxLength": 80,
-          "const": "VBPUO-001.00-Bericht_3._Pensioenprojectie_(0001c)"
+          "maxLength": 80
         },
         "afdDefinitionVersion": {
           "description": "Version of the AFD-definition. (NL: Met AFD definitieversienummer wordt aangegeven over welke versie van de (product)definitie wordt gecommuniceerd.)",
           "customDescription": "Versie van het JSON schema",
           "type": "string",
-          "maxLength": 80,
-          "const": "001.03"
+          "maxLength": 80
         },
         "originalMessageId": {
           "description": "The messageId of the original message, which is replaced by this message. (NL: MessageId van het oorspronkelijke bericht, dat wordt vervangen door dit bericht.)",
@@ -525,6 +523,9 @@
             },
             {
               "const": "60"
+            },
+            {
+              "const": "70"
             }
           ]
         },
@@ -539,10 +540,23 @@
           "uniqueItems": true,
           "allOf": [
             {
-              "minContains": 1,
+              "minContains": 0,
               "maxContains": 9999,
               "contains": {
                 "$ref": "#/definitions/financialTransactionPayment_1"
+              }
+            }
+          ]
+        },
+        "investment": {
+          "type": "array",
+          "uniqueItems": true,
+          "allOf": [
+            {
+              "minContains": 0,
+              "maxContains": 1,
+              "contains": {
+                "$ref": "#/definitions/investmentPortfolio"
               }
             }
           ]
@@ -552,8 +566,7 @@
         "entityType",
         "refKey",
         "description",
-        "reserveIndicator",
-        "financialTransaction"
+        "reserveIndicator"
       ]
     },
     "financialTransactionPayment_1": {
@@ -595,6 +608,20 @@
         "refKey",
         "expectedPensionPaymentDate",
         "amount"
+      ]
+    },
+    "investmentPortfolio": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "entityType": {
+          "description": "Unique identification of an entity. (NL: De unieke identificatie van een entiteit.)",
+          "type": "string",
+          "const": "portfolio"
+        }
+      },
+      "required": [
+        "entityType"
       ]
     }
   },
@@ -660,4 +687,3 @@
     "party"
   ]
 }
-

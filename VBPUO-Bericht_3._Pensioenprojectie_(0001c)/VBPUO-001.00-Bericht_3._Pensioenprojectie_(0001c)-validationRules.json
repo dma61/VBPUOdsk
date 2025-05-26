@@ -1,11 +1,11 @@
 {
   "commonFunctional": {
     "productName": "VBPUO",
-    "definitionVersion": "001.03",
-    "startDate": "20250101",
+    "definitionVersion": "001.04",
+    "startDate": "20260101",
     "functionDescription": "Bericht_3._Pensioenprojectie_(0001c)",
     "tag": "VBPUO",
-    "afdDefinitionChangeLog": "20241127 0049 uitlevering (AOS 001.03) - november"
+    "afdDefinitionChangeLog": "2026mmdd mmss uitlevering (AOS 001.04) - prerelease 2026 (juni)"
   },
   "rule": [
     {
@@ -14,4 +14,3 @@
     }
   ]
 }
-
