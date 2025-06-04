@@ -1,0 +1,153 @@
+@startuml
+hide methods
+set separator none
+
+class berichtstructuur {}
+
+legend top left
+<size:20><b>LEGEND: </b> <color:red><b>Berichtstructuur 1. Vermogen (0001a)</b></color></size>
+
+1. <b>Bold</b> = Mandatory fields
+2. <i>Italic</i> = Optional fields
+3. ..       = incomplete list (complete values on afdCodelists)
+
+For description of codes ADNFUN, ADNDNS, AFDIDP, AFDRES a.s.o. see f.e.
+https://www.sivi.org/afd-online-tool/json/ADNFUN.json. Sometimes VBPUO uses subsets!
+
+end legend
+
+class commonFunctional.default{
+{static} **entityType : string = "default"**
+    {field} **afdDefinitionName : string(80)**
+    {field} **afdDefinitionVersion : string(80)**
+    {field} <i>originalMessageId : string(70)</i>
+    {field}**function : ADNFUN**
+}
+
+class commonTechnical.default {
+ {static} **entityType : string = "default"**
+    **creationDateTime : datetime**
+    {field} **messageId : string(70)**
+    testMessage : boolean
+}
+
+
+class party.receiver {
+    {static} **entityType : string = "receiver"**
+    {field} **refKey : string(70)**
+    {field} <i>rsinNumber : string(9)</i>
+    {field} **organizationName : string(60)**
+}
+
+class party.sender {
+    {static} **entityType : string = "sender"**
+    {field} **refKey : string(70)**
+    {field} <i>rsinNumber : string(9)</i>
+    {field} **organizationName : string(60)**
+    {field} <i>applicationSenderName : string(60)</i>
+}
+
+class party.contact {
+    {static} **entityType : string = "contact"**
+    {field} **emailWork : string(60)**
+    {field} **workPhoneNumber : string(60)**
+}
+
+class document.default {
+    {static} **entityType : string = "default"**
+    {field} **refKey : string(70)**
+    {field} **fileName : string(60)**
+    {field} **fileExtension : string**
+
+}
+
+class party.pensionProvider {
+    {static} **entityType: string = "pensionProvider"**
+    {field} **puvCode**: String
+    {field} <i>rsinNumber : string(9)</i>
+    {field} **organizationName : string(60)**
+}
+
+class pension.scheme {
+    {static} **entityType**: string = scheme
+    {field}**refKey**: string(70)
+    {field}**pensionSchemeName**: string(60)
+    {field}**startAmount : decimal**
+}
+
+class financialInformation.reportingPeriod {
+    {static} **entityType**: string = "reportingPeriod"
+    {field} **startDate**: date
+}
+
+class pension.cohort {
+    {static} **entityType**: string = cohort
+    {field}**refKey**: string(70)
+    {field}**description**: string(60)
+    {field}<i>participationStatus</i>: string
+    {field}<i>startAge</i>: number
+    {field}<i>endAge</i>: number
+    {field}**reserveIndicator**: boolean
+    {field}<i>reserveType</i>: string
+    {field}<i>reserveDescription</i>: string(60)
+    {field}**startAmount**: number
+}
+
+enum AFDRES {
+    1 : Solidariteitsreserve
+    2 : Minimaal vereist eigen vermogen (MVEV)
+    ..
+    99 : Overige
+}
+
+pension.cohort -- AFDRES : reserveType
+
+
+berichtstructuur o-- commonFunctional.default : " 1..1"
+berichtstructuur o-- commonTechnical.default : " 1..1"
+commonTechnical.default o-- party.receiver : " 1..1"
+commonTechnical.default o-- party.sender : " 1..1"
+party.sender o-- party.contact : " 0..9"
+berichtstructuur o-- document.default : " 0..99"
+berichtstructuur o-- party.pensionProvider : " 1..1"
+party.pensionProvider o-- pension.scheme : " 1..999"
+pension.scheme o-- financialInformation.reportingPeriod : " 1..1"
+pension.scheme o-- pension.cohort : " 1..99999"
+
+enum AFDIDP {
+    U0003 : ....
+    U0005 : ....
+    ..
+    U0765 : ....
+}
+
+party.pensionProvider -- AFDIDP : puvCode
+
+enum ADNDNS {
+    16 : Actief
+    20 : AO actief
+    ..
+    60 : Pensioentrekkende
+}
+
+pension.cohort -- ADNDNS : participationStatus
+
+
+enum ADNFUN {
+    01 : Nieuw
+    02 : Wijzigen
+    09 : Ter informatie
+    {field} 54 : Herzenden (inhoud niet aangepast, geen correctie)
+}
+commonFunctional.default -- ADNFUN : function
+
+enum ext {
+    pdf
+    csv
+	txt
+
+}
+
+ext -u- document.default : fileExtension
+
+@enduml

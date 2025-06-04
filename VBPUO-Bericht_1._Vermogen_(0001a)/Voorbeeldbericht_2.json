@@ -32,7 +32,7 @@
 		{
 			"entityType": "default",
 			"afdDefinitionName": "VBPUO-001.00-Bericht_1._Vermogen_(0001a)",
-			"afdDefinitionVersion": "001.04 (issue #74)",
+			"afdDefinitionVersion": "#### uitlevering (AOS 001.04) - commit(s) - issue #74",
 			"function": "01",
 			"originalMessageId": "987654321"
 		}
@@ -64,7 +64,15 @@
 							"reserveIndicator": false,
 							"startAge": 300,
 							"endAge": 780,
-							"participationStatus": "16"
+							"participationStatus": "16",
+							"investment": [
+								{
+									"entityType": "portfolio",
+									"refKey": "PF_MIX_NEUTRAL_01",
+									"description": "Neutraal Mixfonds Beleggingen Standaard",
+									"startExposureAmount": 60000.00
+								}
+							]
 						},
 						{
 							"entityType": "cohort",
@@ -74,7 +82,21 @@
 							"reserveIndicator": false,
 							"startAge": 540,
 							"endAge": 780,
-							"participationStatus": "12"
+							"participationStatus": "12",
+							"investment": [
+                                {
+                                    "entityType": "portfolio",
+                                    "refKey": "PF_STOCK_GLOBAL_02",
+                                    "description": "Wereldwijde Aandelenportefeuille Dynamisch",
+                                    "startExposureAmount": 45000.00
+                                },
+                                {
+                                    "entityType": "portfolio",
+                                    "refKey": "PF_BOND_EURO_02",
+                                    "description": "Europese Obligatieportefeuille Defensief",
+                                    "startExposurePercentage": 0.40
+                                }
+                            ]
 						}
 					]
 				},
@@ -94,24 +116,33 @@
 							"entityType": "cohort",
 							"refKey": "COHORTRES1",
 							"startAmount": 85000.00,
-							"description": "Beschrijving van cohort 202",
+							"description": "Beschrijving van cohort RES1",
 							"reserveIndicator": true,
 							"reserveType": "1",
 							"startAge": 45,
 							"endAge": 65,
-							"participationStatus": "16"
+							"participationStatus": "16",
+							"investment": [
+                                {
+                                    "entityType": "portfolio",
+                                    "refKey": "PF_RESERVE_LOWRISK_03",
+                                    "description": "Lage Risico Reserveportefeuille Solide",
+                                    "startExposurePercentage": 1.00
+                                }
+                            ]
 						},
 						{
 							"entityType": "cohort",
 							"refKey": "COHORTRES2",
 							"startAmount": 85000.00,
-							"description": "Beschrijving van cohort 202",
+							"description": "Beschrijving van cohort RES2",
 							"reserveIndicator": true,
 							"reserveType": "99",
 							"reserveDescription": "specifieke reserve voor slapers",
 							"startAge": 45,
 							"endAge": 65,
-							"participationStatus": "40"
+							"participationStatus": "40",
+							"investment": []
 						}
 					]
 				}
@@ -119,8 +150,5 @@
 		}
 	]
 }
-
-
-
 
 

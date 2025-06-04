@@ -3,9 +3,23 @@
   "description": "JSON Schema SIVI 2.0",
   "//comment": {
     "functionDescription": "Bericht_1._Vermogen_(0001a)",
-    "afdDefinitionChangeLog": "20241127 0049 uitlevering (AOS 001.03) - november"
+    "afdDefinitionChangeLog": "#### uitlevering (AOS 001.04) - commit(s) - issue #74"
   },
   "definitions": {
+    "chunking": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "entityType": {
+          "description": "Unique identification of an entity. (NL: De unieke identificatie van een entiteit.)",
+          "type": "string",
+          "const": "default"
+        }
+      },
+      "required": [
+        "entityType"
+      ]
+    },
     "commonFunctional": {
       "type": "object",
       "additionalProperties": false,
@@ -19,15 +33,14 @@
           "description": "Name of the AFD-definition. (NL: De AFD definitienaam van o.a. webservices en verzekeringsproducten.)",
           "customDescription": "Soort bericht",
           "type": "string",
-          "maxLength": 80,
-          "const": "VBPUO-001.00-Bericht_1._Vermogen_(0001a)"
+          "maxLength": 80
         },
         "afdDefinitionVersion": {
           "description": "Version of the AFD-definition. (NL: Met AFD definitieversienummer wordt aangegeven over welke versie van de (product)definitie wordt gecommuniceerd.)",
           "customDescription": "Versie van het JSON schema",
           "type": "string",
           "maxLength": 80,
-          "const": "001.03"
+          "const": "001.04 (issue #74)"
         },
         "originalMessageId": {
           "description": "The messageId of the original message, which is replaced by this message. (NL: MessageId van het oorspronkelijke bericht, dat wordt vervangen door dit bericht.)",
@@ -365,6 +378,19 @@
             }
           ]
         },
+        "investment": {
+          "type": "array",
+          "uniqueItems": true,
+          "allOf": [
+            {
+              "minContains": 0,
+              "maxContains": 99,
+              "contains": {
+                "$ref": "#/definitions/investmentPortfolio"
+              }
+            }
+          ]
+        },
         "pension": {
           "type": "array",
           "uniqueItems": true,
@@ -407,6 +433,44 @@
       "required": [
         "entityType",
         "startDate"
+      ]
+    },
+    "investmentPortfolio": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "entityType": {
+          "description": "Unique identification of an entity. (NL: De unieke identificatie van een entiteit.)",
+          "type": "string",
+          "const": "portfolio"
+        },
+        "refKey": {
+          "description": "Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)",
+          "customDescription": "ID Beleggingsportefeuille / Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)",
+          "type": "string",
+          "maxLength": 70
+        },
+        "description": {
+          "description": "Description. (NL: Omschrijving)",
+          "customDescription": "Beschrijving",
+          "type": "string",
+          "maxLength": 60
+        },
+        "startExposureAmount": {
+          "description": "The allocation of the pension capital per cohort to a specific investment portfolio, calculated based on the allocation rules as applied by the PUO. (NL: De toedeling van het pensioenvermogen per cohort aan een specifieke investmentportfolio, berekend op basis van de toedelingsregels zoals door de PUO gehanteerd.)",
+          "type": "number",
+          "multipleOf": 0.01
+        },
+        "startExposurePercentage": {
+          "description": "The relative share of the startExposureAmount compared to the total pension capital on that specific date. (NL: Het relatieve aandeel van startExposureAmount ten opzichte van het totale pensioenvermogen per datum.)",
+          "type": "number",
+          "multipleOf": 0.01
+        }
+      },
+      "required": [
+        "entityType",
+        "refKey",
+        "description"
       ]
     },
     "pensionCohort": {
@@ -452,13 +516,13 @@
           "description": "Start age. (NL: Beginleeftijd.)",
           "customDescription": "Startleeftijd in maanden",
           "type": "number",
-          "multipleOf": 0.01
+          "multipleOf": 1.0
         },
         "endAge": {
           "description": "End age. (NL: Eindleeftijd.)",
           "customDescription": "Eindleeftijd in maanden",
           "type": "number",
-          "multipleOf": 0.01
+          "multipleOf": 1.0
         },
         "participationStatus": {
           "description": "Participation type (NL: Deelname status)",
@@ -483,6 +547,9 @@
             },
             {
               "const": "60"
+            },
+            {
+              "const": "70"
             }
           ]
         },
@@ -491,6 +558,19 @@
           "customDescription": "Beschrijving de reserve bij keuze van \"Overige\" in reserve type.",
           "type": "string",
           "maxLength": 60
+        },
+        "investment": {
+          "type": "array",
+          "uniqueItems": true,
+          "allOf": [
+            {
+              "minContains": 0,
+              "maxContains": 99,
+              "contains": {
+                "$ref": "#/definitions/investmentPortfolio_1"
+              }
+            }
+          ]
         }
       },
       "required": [
@@ -500,11 +580,58 @@
         "description",
         "reserveIndicator"
       ]
+    },
+    "investmentPortfolio_1": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "entityType": {
+          "description": "Unique identification of an entity. (NL: De unieke identificatie van een entiteit.)",
+          "type": "string",
+          "const": "portfolio"
+        },
+        "startExposureAmount": {
+          "description": "The allocation of the pension capital per cohort to a specific investment portfolio, calculated based on the allocation rules as applied by the PUO. (NL: De toedeling van het pensioenvermogen per cohort aan een specifieke investmentportfolio, berekend op basis van de toedelingsregels zoals door de PUO gehanteerd.)",
+          "type": "number",
+          "multipleOf": 0.01
+        },
+        "description": {
+          "description": "Description. (NL: Omschrijving)",
+          "type": "string"
+        },
+        "refKey": {
+          "description": "Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)",
+          "type": "string"
+        },
+        "startExposurePercentage": {
+          "description": "The relative share of the startExposureAmount compared to the total pension capital on that specific date. (NL: Het relatieve aandeel van startExposureAmount ten opzichte van het totale pensioenvermogen per datum.)",
+          "type": "number",
+          "multipleOf": 0.01
+        }
+      },
+      "required": [
+        "entityType",
+        "description",
+        "refKey"
+      ]
     }
   },
   "type": "object",
   "additionalProperties": false,
   "properties": {
+    "chunking": {
+      "type": "array",
+      "uniqueItems": true,
+      "allOf": [
+        {
+          "minContains": 0,
+          "maxContains": 1,
+          "contains": {
+            "$ref": "#/definitions/chunking"
+          }
+        }
+      ]
+    },
     "commonFunctional": {
       "type": "array",
       "uniqueItems": true,
