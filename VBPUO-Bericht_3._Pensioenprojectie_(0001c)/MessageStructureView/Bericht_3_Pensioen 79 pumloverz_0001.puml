@@ -1,0 +1,156 @@
+@startuml
+hide methods
+set separator none
+legend top left
+<size:20><b>LEGEND Bericht 3 0001c + Chunking</b></size>
+<size:18><b>         Seperate entities </b></size>
+
+1. <b>Bold</b> = Mandatory fields (if parent object exists)
+2. <i>Italic</i> = Optional fields
+3. ..       = incomplete list (complete values on afdCodelists)
+4. <b>string[]</b> = Array of strings
+
+<size:18>**changes**: </size>
+- chunkMeta.default now directly contains chunkFragmentPaths as an array of strings.
+- totalNumberOfChunks => mandatory (if chunkMeta.default exists)
+
+For description of codes ADNFUN, ADNDNS, AFDIDP, AFDRES a.s.o. see
+https://www.sivi.org/sivi-afs/online-diensten/afd-2-0-online-raadplegen/
+
+end legend
+skinparam class {
+    BackgroundColor<<nieuw>> #FFCCCC
+    BorderColor<<nieuw>> red
+}
+
+class berichtstructuur {}
+
+class chunkMeta.default <<nieuw>> {
+    {static} **entityType : string = "default"**
+    {field} **chunkSequenceNumber : number**
+    {field} **totalNumberOfChunks : number**
+    {field} **currentChunkId : string**
+    {field} **chunkFragmentPaths : string[]**
+}
+note right of chunkMeta.default::chunkFragmentPaths
+  If chunkMeta.default exists,
+  this is an array of 1 to 100
+  JMESPath strings.
+end note
+
+class commonTechnical.default {
+    {static} **entityType : string = "default"**
+    {field} **messageId : string(70)**
+    {field} **creationDateTime : datetime**
+    {field} <i>testMessage : boolean</i>
+}
+
+class party.sender {
+    {static} **entityType : string = "sender"**
+    {field} **refKey : string(70)**
+    {field} <i>rsinNumber : string(9)</i>
+    {field} **organizationName : string(60)**
+    {field} <i>applicationSenderName : string(60)</i>
+}
+
+class party.contact {
+    {static} **entityType : string = "contact"**
+    {field} **emailWork : string(60)**
+    {field} **workPhoneNumber : string(60)**
+}
+
+class party.receiver {
+    {static} **entityType : string = "receiver"**
+    {field} **refKey : string(70)**
+    {field} <i>rsinNumber : string(9)</i>
+    {field} **organizationName : string(60)**
+}
+
+class commonFunctional.default {
+    {static} **entityType : string = "default"**
+    {field} **function : ADNFUN**
+    {field} **afdDefinitionName : string(80)**
+    {field} **afdDefinitionVersion : string(80)**
+    {field} <i>originalMessageId : string(70)</i>
+}
+
+class party.pensionProvider {
+    {static} **entityType: string = "pensionProvider"**
+    {field} **puvCode : string**
+    {field} <i>rsinNumber : string(9)</i>
+    {field} **organizationName : string(60)**
+}
+
+class pension.scheme {
+    {static} **entityType : string = scheme**
+    {field} **refKey : string(70)**
+    {field} **pensionSchemeName : string(60)**
+}
+
+class financialInformation.reportingPeriod {
+    {static} **entityType : string = "reportingPeriod"**
+    {field} **projectionDate : date**
+}
+
+class financialTransaction.payment {
+    {static} **entityType : string = payment**
+    {field} **refKey : string(70)**
+    {field} **expectedPensionPaymentDate : date**
+    {field} **amount : decimal**
+    {field} **hedgedExpectedPensionPaymentAmount : decimal**
+}
+
+class financialTransaction.payment_2 {
+    {static} **entityType : string = payment**
+    {field} **refKey : string(70)**
+    {field} **expectedPensionPaymentDate : date**
+    {field} **amount : decimal**
+    {field} <i>hedgedExpectedPensionPaymentAmount : decimal</i>
+}
+
+class pension.cohort {
+    {static} **entityType : string = cohort**
+    {field} **refKey : string(70)**
+    {field} **description : string(60)**
+    {field} <i>participationStatus : string</i>
+    {field} <i>startAge : number</i>
+    {field} <i>endAge : number</i>
+    {field} **reserveIndicator : boolean**
+    {field} <i>reserveType : string</i>
+    {field} <i>reserveDescription : string(60)</i>
+}
+
+class document.default {
+    {static} **entityType : string = "default"**
+    {field} **refKey : string(70)**
+    {field} **fileName : string(60)**
+    {field} **fileExtension : string**
+}
+
+' Relaties
+berichtstructuur o-- chunkMeta.default : "0..1" ' chunkMeta is optioneel
+' De relatie naar chunkPath.default is verwijderd
+berichtstructuur o-- commonTechnical.default : "1..1"
+berichtstructuur o-- commonFunctional.default : "1..1"
+berichtstructuur o-- document.default : "0..99"
+berichtstructuur o-- party.pensionProvider : "1..1"
+commonTechnical.default o-- party.sender : "1..1"
+commonTechnical.default o-- party.receiver : "1..1"
+party.sender o-- party.contact : "0..9"
+party.pensionProvider o-- pension.scheme : "1..999"
+pension.scheme o-- financialInformation.reportingPeriod : "1..1"
+pension.scheme o-- financialTransaction.payment : "1..99999"
+pension.scheme o-- pension.cohort : "0..99999"
+pension.cohort o-- financialTransaction.payment_2 : "0..9999"
+
+note bottom of chunkMeta.default
+  If chunking is used (this chunkMeta.default object exists),
+  **chunkFragmentPaths** refers to the message parts for which chunking
+  is applicable using JMESPath (1 to 100 paths).
+  <u>The rest of the message should be treated as non-existent
+  for the purpose of this specific chunk's content.
+  We could agree that at most one message (chunk) would have the root
+  as the relevant part and the rest of the messages (chunks) only
+  the subtrees we want to chunk.
+end note
+@enduml

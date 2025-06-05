@@ -5,7 +5,7 @@
     "startDate": "20260101",
     "functionDescription": "Bericht_3._Pensioenprojectie_(0001c)",
     "tag": "VBPUO",
-    "afdDefinitionChangeLog": "2026mmdd mmss uitlevering (AOS 001.04) - prerelease 2026 (juni)"
+    "afdDefinitionChangeLog": "#### uitlevering (AOS 001.04) - commit(s) - issue #74"
   },
   "rule": [
     {
@@ -14,3 +14,4 @@
     }
   ]
 }
+
