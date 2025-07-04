@@ -3,9 +3,46 @@
   "description": "JSON Schema SIVI 2.0",
   "//comment": {
     "functionDescription": "Bericht_13._Waarde-informatie_beleggingspool_(00555b)",
-    "afdDefinitionChangeLog": "20241127 0049 uitlevering (AOS 001.03) - november"
+    "afdDefinitionChangeLog": "20250701 uitlevering (AOS 001.04) - prerelease 2026"
   },
   "definitions": {
+    "chunking": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "entityType": {
+          "description": "Unique identification of an entity. (NL: De unieke identificatie van een entiteit.)",
+          "type": "string",
+          "const": "default"
+        },
+        "currentChunkId": {
+          "description": "Unique reference (id) of the current chunk. (NL: Unieke referentie van de huidige chunk.)",
+          "type": "string"
+        },
+        "chunkSequenceNumber": {
+          "description": "Sequence number of the current chunk. (NL: Volgnummer van de huidige chunk.)",
+          "type": "integer"
+        },
+        "totalNumberOfChunks": {
+          "description": "Total number of chunks the message has been split into. (NL: Totale aantal chunks waarin het bericht is opgesplitst.)",
+          "type": "integer"
+        },
+        "chunkFragmentPaths": {
+          "description": "Array of JMESPath references to the message fragments used within the current chunk. (NL: Array van JMESPath-verwijzingen naar de berichtdelen die gebruikt zijn binnen deze chunk.)",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "entityType",
+        "currentChunkId",
+        "chunkSequenceNumber",
+        "totalNumberOfChunks",
+        "chunkFragmentPaths"
+      ]
+    },
     "commonFunctional": {
       "type": "object",
       "additionalProperties": false,
@@ -19,15 +56,14 @@
           "description": "Name of the AFD-definition. (NL: De AFD definitienaam van o.a. webservices en verzekeringsproducten.)",
           "customDescription": "Soort bericht",
           "type": "string",
-          "maxLength": 80,
-          "const": "VBPUO-001.00-Bericht_13._Waarde-informatie_beleggingspool_(00555b)"
+          "maxLength": 80
         },
         "afdDefinitionVersion": {
           "description": "Version of the AFD-definition. (NL: Met AFD definitieversienummer wordt aangegeven over welke versie van de (product)definitie wordt gecommuniceerd.)",
           "customDescription": "Versie van het JSON schema",
           "type": "string",
           "maxLength": 80,
-          "const": "001.03"
+          "const": "001.04 (prerelease)"
         },
         "originalMessageId": {
           "description": "The messageId of the original message, which is replaced by this message. (NL: MessageId van het oorspronkelijke bericht, dat wordt vervangen door dit bericht.)",
@@ -424,7 +460,7 @@
           "maxLength": 60
         },
         "currencyType": {
-          "description": "Currency   (NL: ISO valutacodetabel (ISO 4217))",
+          "description": "Currency (NL: ISO valutacodetabel (ISO 4217))",
           "customDescription": "Valuta van de pool",
           "codelistName": "ISOVAL",
           "$ref": "https://www.sivi.org/afd-online-tool/json/ISOVAL.json#/definitions/ISOVAL",
@@ -446,12 +482,12 @@
           "description": "Preliminary unit value. (NL: Voorlopige unitwaarde.)",
           "customDescription": "Voorlopige unitwaarde in currencyType van de pool",
           "type": "number",
-          "multipleOf": 0.01
+          "multipleOf": 1E-06
         },
         "numberOfUnits": {
           "description": "Number of units. (NL: Aantal units/eenheden.)",
-          "customDescription": "Aantal units uitgegeven voor de beleggingspool, ",
-          "type": "integer"
+          "type": "number",
+          "multipleOf": 1E-06
         }
       },
       "required": [
@@ -466,6 +502,19 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
+    "chunking": {
+      "type": "array",
+      "uniqueItems": true,
+      "allOf": [
+        {
+          "minContains": 0,
+          "maxContains": 1,
+          "contains": {
+            "$ref": "#/definitions/chunking"
+          }
+        }
+      ]
+    },
     "commonFunctional": {
       "type": "array",
       "uniqueItems": true,

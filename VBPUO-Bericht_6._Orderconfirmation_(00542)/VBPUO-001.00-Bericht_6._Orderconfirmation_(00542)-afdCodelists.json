@@ -1030,7 +1030,7 @@
       ]
     },
     "ISOVAL": {
-      "description": "Currency   (NL: ISO valutacodetabel (ISO 4217))",
+      "description": "Currency (NL: ISO valutacodetabel (ISO 4217))",
       "codelistName": "ISOVAL",
       "type": "string",
       "oneOf": [

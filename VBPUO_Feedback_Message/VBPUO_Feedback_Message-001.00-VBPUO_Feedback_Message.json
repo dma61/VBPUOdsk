@@ -3,7 +3,7 @@
   "description": "JSON Schema SIVI 2.0",
   "//comment": {
     "functionDescription": "VBPUO_Feedback_Message",
-    "afdDefinitionChangeLog": "Initiële versie 20240522"
+    "afdDefinitionChangeLog": "20250701 uitlevering (AOS 001.01) - prerelease 2026 (feedback message)"
   },
   "definitions": {
     "commonFunctional": {
@@ -19,18 +19,19 @@
           "description": "Name of the AFD-definition. (NL: De AFD definitienaam van o.a. webservices en verzekeringsproducten.)",
           "customDescription": "Name of the AFD-definition, refers to the Feedback message itself.",
           "type": "string",
-          "const": "VBPUO_Feedback_Message-001.00-VBPUO_Feedback_Message"
+          "const": "VBPUO_Feedback_Message-001.01-VBPUO_Feedback_Message"
         },
         "afdDefinitionVersion": {
           "description": "Version of the AFD-definition. (NL: Met AFD definitieversienummer wordt aangegeven over welke versie van de (product)definitie wordt gecommuniceerd.)",
           "customDescription": "Version of the AFD-definition, refers to the Feedback message itself.",
           "type": "string",
-          "const": "001.00"
+          "const": "001.01"
         },
         "originalMessageId": {
           "description": "The messageId of the original message, which is replaced by this message. (NL: MessageId van het oorspronkelijke bericht, dat wordt vervangen door dit bericht.)",
           "customDescription": "The commonTechnical.messageID of the original message for which the status and/or errors are being sent to the Feedback endpoint.",
-          "type": "string"
+          "type": "string",
+          "maxLength": 70
         },
         "function": {
           "description": "Message function (NL: Berichtfunctie)",
@@ -53,6 +54,51 @@
             },
             {
               "const": "8"
+            }
+          ]
+        },
+        "originalMessageType": {
+          "description": "Message type of the original request to which this message is a response. (NL: Berichtsoort van het oorspronkelijke bericht waarop dit bericht een response is.)",
+          "type": "string",
+          "oneOf": [
+            {
+              "const": "0001a"
+            },
+            {
+              "const": "0001b"
+            },
+            {
+              "const": "0001c"
+            },
+            {
+              "const": "00002"
+            },
+            {
+              "const": "00541"
+            },
+            {
+              "const": "00551"
+            },
+            {
+              "const": "00552a"
+            },
+            {
+              "const": "00552b"
+            },
+            {
+              "const": "00553"
+            },
+            {
+              "const": "00554"
+            },
+            {
+              "const": "00555a"
+            },
+            {
+              "const": "00555b"
+            },
+            {
+              "const": "00556"
             }
           ]
         }

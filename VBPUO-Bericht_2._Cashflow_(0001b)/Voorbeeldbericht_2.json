@@ -31,7 +31,7 @@
 		{
 			"entityType": "default",
 			"afdDefinitionName": "VBPUO-001.00-Bericht_2._Cashflow_(0001b)",
-			"afdDefinitionVersion": "001.03",
+			"afdDefinitionVersion":"001.04 (prerelease)" ,
 			"function": "01",
 			"originalMessageId": "987654321"
 		}
@@ -145,6 +145,7 @@
 	"document": [
 	]
 }
+
 
 
 

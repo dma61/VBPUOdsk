@@ -1,10 +1,10 @@
 {
   "commonFunctional": {
     "productName": "VBPUO_Feedback_Message",
-    "definitionVersion": "001.00",
-    "startDate": "20240501",
+    "definitionVersion": "001.01",
+    "startDate": "20260101",
     "functionDescription": "VBPUO_Feedback_Message",
-    "afdDefinitionChangeLog": "Initiële versie 20240522"
+    "afdDefinitionChangeLog": "20250701 uitlevering (AOS 001.01) - prerelease 2026 (feedback message)"
   },
   "rule": [
     {

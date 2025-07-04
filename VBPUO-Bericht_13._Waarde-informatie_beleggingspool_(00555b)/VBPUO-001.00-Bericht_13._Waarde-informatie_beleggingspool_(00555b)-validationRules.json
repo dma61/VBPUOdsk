@@ -1,11 +1,11 @@
 {
   "commonFunctional": {
     "productName": "VBPUO",
-    "definitionVersion": "001.03",
-    "startDate": "20250101",
+    "definitionVersion": "001.04",
+    "startDate": "20260101",
     "functionDescription": "Bericht_13._Waarde-informatie_beleggingspool_(00555b)",
     "tag": "VBPUO",
-    "afdDefinitionChangeLog": "20241127 0049 uitlevering (AOS 001.03) - november"
+    "afdDefinitionChangeLog": "20250701 uitlevering (AOS 001.04) - prerelease 2026"
   },
   "rule": [
     {

@@ -4,7 +4,7 @@
       "entityType": "default",
       "originalMessageId": "msg12345",
       "afdDefinitionName": "VBPUO-001.00-Bericht_11._Rebalancinginformatie_(00554)",
-      "afdDefinitionVersion": "001.03",
+      "afdDefinitionVersion":"001.04 (prerelease)" ,
       "function": "54"
     }
   ],
@@ -82,7 +82,7 @@
                   "dummyCashId": "DUMMY124",
                   "buySellId": "sell",
                   "tradeQuantity": 500,
-                  "unitPrice": 8.00,
+                  
                   "currencyExchangeRate": 1.00,
                   "currencyType": "USD"
                 }
@@ -102,7 +102,7 @@
                   "dummyCashId": "DUMMY125",
                   "buySellId": "buy",
                   "tradeQuantity": 1500,
-                  "unitPrice": 12.00,
+                  
                   "currencyExchangeRate": 0.85,
                   "currencyType": "EUR"
                 }
@@ -122,5 +122,6 @@
     }
   ]
 }
+
 
 

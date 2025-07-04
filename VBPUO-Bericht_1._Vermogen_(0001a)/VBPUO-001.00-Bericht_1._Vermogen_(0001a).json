@@ -3,7 +3,7 @@
   "description": "JSON Schema SIVI 2.0",
   "//comment": {
     "functionDescription": "Bericht_1._Vermogen_(0001a)",
-    "afdDefinitionChangeLog": "#### uitlevering (AOS 001.04) - commit(s) - issue #74"
+    "afdDefinitionChangeLog": "20250701 uitlevering (AOS 001.04) - prerelease 2026"
   },
   "definitions": {
     "chunking": {
@@ -14,10 +14,33 @@
           "description": "Unique identification of an entity. (NL: De unieke identificatie van een entiteit.)",
           "type": "string",
           "const": "default"
+        },
+        "currentChunkId": {
+          "description": "Unique reference (id) of the current chunk. (NL: Unieke referentie van de huidige chunk.)",
+          "type": "string"
+        },
+        "chunkSequenceNumber": {
+          "description": "Sequence number of the current chunk. (NL: Volgnummer van de huidige chunk.)",
+          "type": "integer"
+        },
+        "totalNumberOfChunks": {
+          "description": "Total number of chunks the message has been split into. (NL: Totale aantal chunks waarin het bericht is opgesplitst.)",
+          "type": "integer"
+        },
+        "chunkFragmentPaths": {
+          "description": "Array of JMESPath references to the message fragments used within the current chunk. (NL: Array van JMESPath-verwijzingen naar de berichtdelen die gebruikt zijn binnen deze chunk.)",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "required": [
-        "entityType"
+        "entityType",
+        "currentChunkId",
+        "chunkSequenceNumber",
+        "totalNumberOfChunks",
+        "chunkFragmentPaths"
       ]
     },
     "commonFunctional": {
@@ -40,7 +63,7 @@
           "customDescription": "Versie van het JSON schema",
           "type": "string",
           "maxLength": 80,
-          "const": "001.04 (issue #74)"
+          "const": "001.04 (prerelease)"
         },
         "originalMessageId": {
           "description": "The messageId of the original message, which is replaced by this message. (NL: MessageId van het oorspronkelijke bericht, dat wordt vervangen door dit bericht.)",
@@ -507,7 +530,7 @@
         },
         "reserveType": {
           "description": "Reserve type (NL: Type reserve)",
-          "customDescription": "Keuze van het type reserve",
+          "customDescription": "Keuze van het type (reserve feitelijk een) voorziening / type of provision.",
           "codelistName": "AFDRES",
           "$ref": "https://www.sivi.org/afd-online-tool/json/AFDRES.json#/definitions/AFDRES",
           "type": "string"
@@ -544,9 +567,6 @@
             },
             {
               "const": "80"
-            },
-            {
-              "const": "60"
             },
             {
               "const": "70"

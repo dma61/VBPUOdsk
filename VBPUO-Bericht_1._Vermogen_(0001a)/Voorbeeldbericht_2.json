@@ -32,7 +32,7 @@
 		{
 			"entityType": "default",
 			"afdDefinitionName": "VBPUO-001.00-Bericht_1._Vermogen_(0001a)",
-			"afdDefinitionVersion": "#### uitlevering (AOS 001.04) - commit(s) - issue #74",
+			"afdDefinitionVersion":"001.04 (prerelease)" ,
 			"function": "01",
 			"originalMessageId": "987654321"
 		}
@@ -150,5 +150,6 @@
 		}
 	]
 }
+
 
 

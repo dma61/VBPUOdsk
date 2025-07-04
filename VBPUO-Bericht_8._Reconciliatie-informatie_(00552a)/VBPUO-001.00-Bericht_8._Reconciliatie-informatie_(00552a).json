@@ -3,9 +3,46 @@
   "description": "JSON Schema SIVI 2.0",
   "//comment": {
     "functionDescription": "Bericht_8._Reconciliatie-informatie_(00552a)",
-    "afdDefinitionChangeLog": "20241127 0049 uitlevering (AOS 001.03) - november"
+    "afdDefinitionChangeLog": "20250701 uitlevering (AOS 001.04) - prerelease 2026"
   },
   "definitions": {
+    "chunking": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "entityType": {
+          "description": "Unique identification of an entity. (NL: De unieke identificatie van een entiteit.)",
+          "type": "string",
+          "const": "default"
+        },
+        "currentChunkId": {
+          "description": "Unique reference (id) of the current chunk. (NL: Unieke referentie van de huidige chunk.)",
+          "type": "string"
+        },
+        "chunkSequenceNumber": {
+          "description": "Sequence number of the current chunk. (NL: Volgnummer van de huidige chunk.)",
+          "type": "integer"
+        },
+        "totalNumberOfChunks": {
+          "description": "Total number of chunks the message has been split into. (NL: Totale aantal chunks waarin het bericht is opgesplitst.)",
+          "type": "integer"
+        },
+        "chunkFragmentPaths": {
+          "description": "Array of JMESPath references to the message fragments used within the current chunk. (NL: Array van JMESPath-verwijzingen naar de berichtdelen die gebruikt zijn binnen deze chunk.)",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "entityType",
+        "currentChunkId",
+        "chunkSequenceNumber",
+        "totalNumberOfChunks",
+        "chunkFragmentPaths"
+      ]
+    },
     "commonFunctional": {
       "type": "object",
       "additionalProperties": false,
@@ -19,15 +56,14 @@
           "description": "Name of the AFD-definition. (NL: De AFD definitienaam van o.a. webservices en verzekeringsproducten.)",
           "customDescription": "Soort bericht",
           "type": "string",
-          "maxLength": 80,
-          "const": "VBPUO-001.00-Bericht_8._Reconciliatie-informatie_(00552a)"
+          "maxLength": 80
         },
         "afdDefinitionVersion": {
           "description": "Version of the AFD-definition. (NL: Met AFD definitieversienummer wordt aangegeven over welke versie van de (product)definitie wordt gecommuniceerd.)",
           "customDescription": "Versie van het JSON schema",
           "type": "string",
           "maxLength": 80,
-          "const": "001.03"
+          "const": "001.04 (prerelease)"
         },
         "originalMessageId": {
           "description": "The messageId of the original message, which is replaced by this message. (NL: MessageId van het oorspronkelijke bericht, dat wordt vervangen door dit bericht.)",
@@ -424,7 +460,7 @@
           "maxLength": 60
         },
         "currencyType": {
-          "description": "Currency   (NL: ISO valutacodetabel (ISO 4217))",
+          "description": "Currency (NL: ISO valutacodetabel (ISO 4217))",
           "customDescription": "Valuta van de pool",
           "codelistName": "ISOVAL",
           "$ref": "https://www.sivi.org/afd-online-tool/json/ISOVAL.json#/definitions/ISOVAL",
@@ -481,7 +517,7 @@
           "maxLength": 60
         },
         "currencyType": {
-          "description": "Currency   (NL: ISO valutacodetabel (ISO 4217))",
+          "description": "Currency (NL: ISO valutacodetabel (ISO 4217))",
           "customDescription": "Valuta van het instrument ",
           "codelistName": "ISOVAL",
           "$ref": "https://www.sivi.org/afd-online-tool/json/ISOVAL.json#/definitions/ISOVAL",
@@ -511,22 +547,21 @@
           "type": "number",
           "multipleOf": 0.01
         },
-        "numberOfHoldings": {
-          "description": "Number of holdings. (NL: Aantal holdings.)",
-          "customDescription": "Aantal holdings per instrument per regeling per beleggingsportefeuille",
-          "type": "integer"
-        },
-        "localPrice": {
-          "description": "Price in original (local) currency. (NL: Prijs in originele lokale valuta.)",
-          "customDescription": "Prijs per instrument in originele valuta per regeling per beleggingsportefeuille",
-          "type": "number",
-          "multipleOf": 0.01
-        },
         "poolPercentage": {
           "description": "Percentage within the portfolio. (NL: Gewicht binnen de portefeuille.)",
           "customDescription": "Gewicht in de portefeuille per instrument per regeling per beleggingsportefeuille[2]",
           "type": "number",
           "multipleOf": 0.01
+        },
+        "numberOfHoldings": {
+          "description": "Number of holdings. (NL: Aantal holdings.)",
+          "type": "number",
+          "multipleOf": 1E-06
+        },
+        "localPrice": {
+          "description": "Price in original (local) currency. (NL: Prijs in originele lokale valuta.)",
+          "type": "number",
+          "multipleOf": 1E-06
         }
       },
       "required": [
@@ -538,15 +573,28 @@
         "localValueAmount",
         "result",
         "accruedInterest",
+        "poolPercentage",
         "numberOfHoldings",
-        "localPrice",
-        "poolPercentage"
+        "localPrice"
       ]
     }
   },
   "type": "object",
   "additionalProperties": false,
   "properties": {
+    "chunking": {
+      "type": "array",
+      "uniqueItems": true,
+      "allOf": [
+        {
+          "minContains": 0,
+          "maxContains": 1,
+          "contains": {
+            "$ref": "#/definitions/chunking"
+          }
+        }
+      ]
+    },
     "commonFunctional": {
       "type": "array",
       "uniqueItems": true,
