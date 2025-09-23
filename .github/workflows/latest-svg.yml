@@ -1,11 +1,14 @@
 name: Update latest.svg per MessageStructureView
 
+permissions:
+  contents: write
+
 on:
   push:
     branches: [ main ]
     paths:
       - '**/MessageStructureView/*.svg'
-  workflow_dispatch:   # handmatig starten mogelijk
+  workflow_dispatch:
 
 jobs:
   pick-latest:
@@ -13,17 +16,39 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # nodig om git log te kunnen gebruiken
+          fetch-depth: 0
 
       - name: Zet per map de meest recente .svg als latest.svg
         shell: bash
         run: |
+          set -euo pipefail
           shopt -s globstar nullglob
+
           changed=0
           for dir in **/MessageStructureView; do
-            # verzamel alle .svg behalve latest.svg en alles onder archive/
+            # --- SPECIALE CASE: Feedback Message ---
+            if [[ "$dir" == *"VBPUO_Feedback_Message/MessageStructureView" ]]; then
+              src="$dir/Feedback_message.svg"   # vaste bron
+              target="$dir/latest.svg"
+              if [ -f "$src" ]; then
+                if [ ! -f "$target" ] || ! cmp -s "$src" "$target"; then
+                  cp "$src" "$target"
+                  git add "$target"
+                  echo "Feedback: Updated $target -> $(basename "$src")"
+                  changed=1
+                else
+                  echo "Feedback: $target is al up-to-date."
+                fi
+              else
+                echo "Feedback: BRON BESTAAT NIET: $src (sla over)"
+              fi
+              continue
+            fi
+
+            # --- GENERIEKE CASE: kies nieuwste .svg in de map ---
+            # verzamel alle .svg behalve latest.svg (en negeer submappen zoals archive/)
             mapfile -t svgs < <(find "$dir" -maxdepth 1 -type f -name '*.svg' ! -name 'latest.svg' -printf '%p\n')
-            [ ${#svgs[@]} -eq 0 ] && continue
+            [ ${#svgs[@]} -eq 0 ] && { echo "Geen SVG's in $dir, sla over."; continue; }
 
             newest=""
             newest_ts=0
@@ -39,6 +64,8 @@ jobs:
                 git add "$target"
                 echo "Updated $target -> $(basename "$newest")"
                 changed=1
+              else
+                echo "$target is al up-to-date."
               fi
             fi
           done
@@ -46,7 +73,7 @@ jobs:
           if [ "$changed" -eq 1 ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "chore: refresh latest.svg per MessageStructureView"
+            git commit -m "chore: refresh latest.svg per MessageStructureView (incl. Feedback special case)"
             git push
           else
             echo "Niets te updaten."
