@@ -1,0 +1,53 @@
+name: Update latest.svg per MessageStructureView
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**/MessageStructureView/*.svg'
+  workflow_dispatch:   # handmatig starten mogelijk
+
+jobs:
+  pick-latest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # nodig om git log te kunnen gebruiken
+
+      - name: Zet per map de meest recente .svg als latest.svg
+        shell: bash
+        run: |
+          shopt -s globstar nullglob
+          changed=0
+          for dir in **/MessageStructureView; do
+            # verzamel alle .svg behalve latest.svg en alles onder archive/
+            mapfile -t svgs < <(find "$dir" -maxdepth 1 -type f -name '*.svg' ! -name 'latest.svg' -printf '%p\n')
+            [ ${#svgs[@]} -eq 0 ] && continue
+
+            newest=""
+            newest_ts=0
+            for f in "${svgs[@]}"; do
+              ts=$(git log -1 --format=%ct -- "$f" 2>/dev/null || echo 0)
+              (( ts > newest_ts )) && { newest_ts=$ts; newest="$f"; }
+            done
+
+            target="$dir/latest.svg"
+            if [ -n "$newest" ]; then
+              if [ ! -f "$target" ] || ! cmp -s "$newest" "$target"; then
+                cp "$newest" "$target"
+                git add "$target"
+                echo "Updated $target -> $(basename "$newest")"
+                changed=1
+              fi
+            fi
+          done
+
+          if [ "$changed" -eq 1 ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: refresh latest.svg per MessageStructureView"
+            git push
+          else
+            echo "Niets te updaten."
+          fi
