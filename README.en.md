@@ -1,4 +1,3 @@
-<details>
 <summary>🇬🇧 Click to expand English version</summary>
 
 # VBPUOdsk
@@ -81,5 +80,3 @@ provided that the standard’s contents are **not altered** outside the formal g
 > New developments are expected in the next annual release cycle.*
 
 © Pensioenfederatie / SIVI – Repository maintained for publication and version management.
-
-</details>
