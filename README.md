@@ -37,7 +37,7 @@ Klik op **"Watch"** op de "<> Code" pagina als je deze standaard gebruikt, om up
 ## 🔄 Continue ontwikkeling
 
 Tijdens het jaar kunnen goedgekeurde verbeteringen en uitbreidingen tussentijds worden gepubliceerd  
-onder de sectie `/development` van deze repository.  
+op de hoofdbranch (`main`) van deze repository.  
 Deze aanvullingen worden opgenomen in de volgende formele jaarrelease.
 
 ---
