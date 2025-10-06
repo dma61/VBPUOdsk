@@ -43,7 +43,7 @@ Please **"Watch"** this project if you are using it → click the **Watch** butt
 ## 🔄 Continuous development
 
 During the year, approved improvements and extensions may be published  
-under the `/development` section of this repository.  
+on the main branch (`main`) of this repository.  
 These interim updates will be included in the next formal annual release.
 
 ---
