@@ -1,4 +1,4 @@
-<summary>🇬🇧 Click to expand English version</summary>
+<summary>🇬🇧 version</summary>
 
 # VBPUOdsk
 
